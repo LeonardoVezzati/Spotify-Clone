@@ -38,7 +38,7 @@
     max-width: 100%;
     width: 144px;
     }
-  .content{
+  .wrapper{
     margin: 0 auto;
     max-width: 450px;
   }
@@ -53,7 +53,7 @@
     background-color: #3b5998;
 }
 
-.btn-default, .btn-secondary, .btn-secondary-img, .btn-stroked-dark, .btn-tertiary {
+.btn-default {
     color: #616467;
     box-shadow: inset 0 0 0 2px #616467;
     background-color: transparent;
@@ -68,7 +68,6 @@
     letter-spacing: 2px;
     min-width: 160px;
     text-transform: uppercase;
-    white-space: normal;
 
     margin-bottom: 0;
     font-weight: 700;
@@ -78,7 +77,11 @@
 
 }
 
-.btn-apple, .btn-facebook{
+
+
+@media(min-width:700px){
+
+  .btn-apple, .btn-facebook{
     padding-top: 14px;
 }
 .btn-apple:before, .btn-facebook:before {
@@ -96,7 +99,7 @@
     display: inline-block;
     content: "\F179";
 }
-
+}
 
 @media(min-width:768px){
 
@@ -159,7 +162,7 @@ h4, p {
     </div>
   </nav>
 <div class="container-fluid px-3">
-  <div class="content">
+  <div class="wrapper">
 
     <div class="row">
         <div class="col-12 text-center">
@@ -237,8 +240,6 @@ h4, p {
       </div>
       
     </form>
-
-    <div id="sign-up-section">
       <div class="row">
         <div class="col-12">
         <div class="row">
@@ -261,7 +262,6 @@ h4, p {
 </div>
 
         </div>
-      </div>
     </div>
 
   </div>
