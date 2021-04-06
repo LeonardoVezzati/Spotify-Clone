@@ -11,8 +11,261 @@
   <!--CSS-->
   <link rel="stylesheet" href="stylesheet.css">
 
+<style>
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding-bottom: 5px;
+    font-weight: 400;
+}
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+}
+.head {
+    border-bottom: 1px solid #d9dadc;
+    padding: 25px 0 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.logo{  
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-size: 100%;
+    display: inline-block;
+    max-width: 100%;
+    width: 144px;
+    }
+  .content{
+    margin: 0 auto;
+    max-width: 450px;
+  }
+
+
+.btn, .navbar .navbar-nav .navbar-btn {
+    padding: 16px 14px 18px;
+}
+
+.btn-facebook {
+    color: #fff;
+    background-color: #3b5998;
+}
+
+.btn-default, .btn-secondary, .btn-secondary-img, .btn-stroked-dark, .btn-tertiary {
+    color: #616467;
+    box-shadow: inset 0 0 0 2px #616467;
+    background-color: transparent;
+}
+
+.btn {
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    /* padding: 16px 48px 18px; */
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+
+    margin-bottom: 0;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    background-image: none;
+
+}
+
+.btn-apple, .btn-facebook{
+    padding-top: 14px;
+}
+.btn-apple:before, .btn-facebook:before {
+    font-family: Font Awesome\ 5 Brands;
+    font-size: 16px;
+    margin-right: 14px;
+}
+
+.btn-facebook:before {
+    display: inline-block;
+    content: "\F09A";
+}
+
+.btn-apple:before {
+    display: inline-block;
+    content: "\F179";
+}
+
+
+@media(min-width:768px){
+
+.logo{  
+    width: 200px;
+    }
+}
+
+  
+
+.row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .divider {
+    border-top: 1px solid #d9dadc;
+    display: block;
+    line-height: 1px;
+    margin: 15px 0;
+    position: relative;
+    text-align: center;
+}
+
+.divider .divider-title {
+    background: #fff;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    text-transform: uppercase;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+h4, p {
+    margin: .5em 0 1em;
+}
+
+.btn-green {
+    color: #fff;
+    background-color: #15883e;
+}
+
+
+
+</style>
 </head>
+
+
+
+
 <body>
+  <nav class="navbar head mb-5">
+    <div class="container">
+      <a class="navbar-brand mx-auto" href="homepage.html">
+        <img src="logo.svg" class="logo">
+      </a>
+    </div>
+  </nav>
+<div class="container-fluid px-3">
+  <div class="content">
+
+    <div class="row">
+        <div class="col-12 text-center">
+            <h5 >To continue, log in to Spotify.</h5>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-12" >
+        <a  class="btn btn-block btn-facebook" style="background-color:#3b5998">Continue with Facebook</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <a  class="btn btn-block  text-white btn-apple" style="background-color:black">Continue with Apple</a>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-12">
+        <div class="divider">
+          <strong class="divider-title ">or</strong>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <form>
+      <div class="row">
+        <div class="col-12">
+          <label for="login-username">
+            Email address or username
+          </label>
+          <input type="text" class="form-control"  id="login-username" placeholder="Email address or username" required>
+          <!-- ngIf: accounts.username.$dirty && accounts.username.$invalid -->
+        </div>
+      </div>
+
+      <div class="row" >
+        <div class="col-12">
+          <label for="login-password">
+            Password
+          </label>
+          <input type="password" class="form-control" id="login-password" placeholder="Password" required>
+          <!-- ngIf: accounts.password.$dirty && accounts.password.$invalid -->
+        </div>
+      </div>
+
+      <div class="row text-center password-reset">
+        <div class="col-12">
+          <p>
+            <a style=" color: #616467; text-decoration: underline;" id="reset-password-link">Forgot your password?</a>
+          </p>
+        </div>
+      </div>
+      <div class="row row-submit">
+        <div class="col-12 col-sm-6">
+          <div class="checkbox">
+            <label>
+              <input  type="checkbox" id="login-remember">
+              Remember me
+              <span class="control-indicator"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <button class="btn btn-block btn-green" id="login-button">Log In</button>
+        </div>
+      </div>
+      
+    </form>
+
+    <div id="sign-up-section">
+      <div class="row">
+        <div class="col-12">
+        <div class="row">
+            <div class="col-12">
+                <div class="divider">
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-0">
+            <h4>Don't have an account?</h4>
+        </div>
+        <div>
+            <div class="row">
+                <div class="col-12">
+                    <a id="sign-up-link" class="btn btn-block btn-default">Sign up for Spotify</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
   
     <!--Bootstrap-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
