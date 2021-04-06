@@ -1,0 +1,32 @@
+body {
+  background: rgb(34, 66, 105);
+  background: linear-gradient(
+    90deg,
+    rgba(34, 66, 105, 1) 0%,
+    rgba(36, 68, 107, 1) 27%,
+    rgba(10, 20, 31, 1) 100%
+  );
+  color: white;
+}
+div > a {
+  color: white;
+  font-size: 1px;
+  font-weight: 100px;
+}
+h3 {
+  font-family: 'Gothic A1', sans-serif;
+}
+nav {
+  background: rgb(34, 66, 105);
+  background: linear-gradient(
+    90deg,
+    rgba(34, 66, 105, 1) 0%,
+    rgba(36, 68, 107, 1) 27%,
+    rgba(10, 20, 31, 1) 100%
+  );
+  justify-content: center;
+  text-align: center;
+}
+div .col {
+  text-align: center;
+}
