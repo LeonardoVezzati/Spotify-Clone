@@ -9,7 +9,6 @@
   <!--Bootstrap-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <!--CSS-->
-  <link rel="stylesheet" href="stylesheet.css">
 
 <style>
 
@@ -26,11 +25,6 @@
     margin-right: auto;
     margin-left: auto;
 }
-.wrapper{
-    margin: 0 auto;
-    max-width: 450px;
-  }
-
 .head {
     border-bottom: 1px solid #d9dadc;
     padding: 25px 0 10px;
@@ -46,6 +40,12 @@
     max-width: 100%;
     width: 144px;
     }
+
+  .wrapper{
+    margin: 0 auto;
+    max-width: 450px;
+  }
+
 
 .btn, .navbar .navbar-nav .navbar-btn {
     padding: 16px 14px 18px;
@@ -204,67 +204,6 @@ h4, p {
      background-color:#fff;
 }
 
-.wrapper {
-    position: relative;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-}
-
-/*style label to give some more space*/
-.wrapper label {
-    display: block;
-    padding: 12px 0 12px 48px;
-}
-
-/*style and hide original checkbox*/
-.wrapper input {
-  height: 40px;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 40px;
-}
-
-/*position new box*/
-.wrapper input + label::before {
-  border: 2px solid;
-  content: "";
-  height: 40px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 40px;
-}
-
-/*svg background styles*/
-/* .wrapper input + label::after {
-  content: "";
-  opacity: 0;
-  background-color:transparent;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check.svg");
-  background-repeat: no-repeat;
-  height: 20px;
-  width: 20px;
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  transition: opacity 0.2s ease-in-out;
-  background-color: #47b850;
-} */
-
-/*reveal check for 'on' state*/
-/* .wrapper input:checked + label::after {
-  opacity: 1;
- background-color: #47b850;
-} */
-
-/*focus styles*/
-/* .wrapper input:focus + label::before {
-  box-shadow: 0 0 0 3px #ffbf47;  
-  outline: 3px solid transparent; /* For Windows high contrast mode.
-
-} */
 
 @media(min-width:700px){
 
@@ -367,16 +306,11 @@ h4, p {
       <div class="row row-submit">
         <div class="col-12 col-sm-6 d-flex flex-column justify-content-center">
          <div>
-            <label class="checkbox mb-3 mb-md-0"><span>Remember me</span>
-              <input type="checkbox" id="login-remember" checked="checked">
-              <span class="checkmark"></span>
+            <label  class="checkbox mb-3 mb-md-0"><span>Remember me</span>
+              <input  type="checkbox" id="login-remember" checked="checked">
+              <span tabindex="0" class="checkmark"></span>
             </label>
           </div>
-
-          <!-- <div class="wrapper">
-            <input id="a11y-issue-1" name="a11y-issues" type="checkbox" value="no-issues">
-            <label for="a11y-issue-1">There are no issues.</label>
-          </div> -->
         </div>
         <div class="col-12 col-sm-6">
           <a class="btn btn-block btn-green" id="login-button" href="#">Log In</a>
