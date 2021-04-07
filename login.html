@@ -266,12 +266,12 @@ h4, p {
     </div>
     <div class="row">
       <div class="col-12" >
-        <a  class="btn btn-block btn-facebook" style="background-color:#3b5998">Continue with Facebook</a>
+        <button  class="btn btn-block btn-facebook" style="background-color:#3b5998">Continue with Facebook</button>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
-        <a  class="btn btn-block  text-white btn-apple" style="background-color:black">Continue with Apple</a>
+        <button class="btn btn-block text-white btn-apple" style="background-color:black">Continue with Apple</button>
       </div>
     </div>
   
@@ -287,21 +287,20 @@ h4, p {
     <form>
       <div class="row">
         <div class="col-12">
-          <label for="login-username">
+          <!--Screen readers can't detect placeholder text so label should be displayed for accessabilty purposes-->
+          <!-- <label for="login-username">
             Email address or username
-          </label>
+          </label> -->
           <input type="text" class="form-control"  id="login-username" placeholder="Email address or username" required>
-          <!-- ngIf: accounts.username.$dirty && accounts.username.$invalid -->
         </div>
       </div>
 
       <div class="row" >
         <div class="col-12">
-          <label for="login-password">
+          <!-- <label for="login-password">
             Password
-          </label>
+          </label> -->
           <input type="password" class="form-control" id="login-password" placeholder="Password" required>
-          <!-- ngIf: accounts.password.$dirty && accounts.password.$invalid -->
         </div>
       </div>
 
@@ -323,9 +322,7 @@ h4, p {
      
 
       <div class="col-12 text-center text-green mt-3" >
-        <p>
           <a style="text-decoration: underline;" id="reset-password-link">Forgot your password?</a>
-        </p>
       </div>
     </div>
       
@@ -343,7 +340,7 @@ h4, p {
         </div>
             <div class="row">
                 <div class="col-12">
-                    <a id="sign-up-link" class="btn btn-block btn-default">Sign up for Spotify</a>
+                    <button id="sign-up-link" class="btn btn-block btn-default">Sign up for Spotify</button>
                 </div>
             </div>
     </div>
