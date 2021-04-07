@@ -1,5 +1,5 @@
 
-.wrapper{
+.wrapperSideBar{
   background-color: #050505;
   width: 200px;
   height: 90vh;
@@ -13,6 +13,11 @@
 .sidebarLogo{
   width: 100px;
   height: 100%;
+}
+
+
+.sidebarHeadings li{
+  text-align: left;
 }
 
 .sidebar-header{
@@ -54,8 +59,9 @@
 
 .sidebarBottomInfo{
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
   left: 50%;
+  padding: 20px;
   transform: translateX(-50%);
   width: 100%;
 }
@@ -208,13 +214,13 @@
   background-color: #FFFFFF;
   color: #050505;
   border-radius: 30px;
-  width: 85%;
+  width: 100%;
   text-align:center;
   margin:auto;
   margin-bottom: 10px;
 }
 
-.sidebarBottomInfoSignUp a:hover{
+.sidebarBottomInfoSignUp:hover{
   text-decoration: none;
   color: #050505;
 }
@@ -226,13 +232,13 @@
   border:2px solid #FFFFFF;
   text-align:center;
   border-radius: 30px;
-  width: 85%;
+  width: 100%;
   margin:auto;
   margin-bottom: 10px;
 }
 
 
-.sidebarBottomInfoLogin a:hover{
+.sidebarBottomInfoLogin:hover{
   text-decoration: none;
   color: #FFFFFF;
 }
@@ -298,3 +304,101 @@ div .col {
   text-align: center;
 }
 
+.signUpWithFacebook{
+  background-color: #3b5998;
+  color: #FFFFFF;
+  border-radius: 40px;
+  padding: 10px 0px;
+}
+
+.signUpWithFacebook i{
+  margin-right: 20px;
+}
+
+.signUpWithApple{
+  background-color: #050505;
+  color: #FFFFFF;
+  border-radius: 40px;
+  padding: 10px 0px;
+  margin-top: 10px;
+}
+
+.signUpWithApple i{
+  margin-right: 20px;
+}
+
+.modal-body p{
+  color: #050505;
+}
+
+
+.modal-body label{
+  color: #050505;
+}
+
+.formSignUpMainP{
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.spotifyColorButton{
+  background-color: #1DB954;
+  border-radius: 40px;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 10px 0px;
+}
+
+.spotifySecondaryButton{
+  background-color: #FFFFFF;
+  border-radius: 40px;
+  border: 2px solid #050505;
+  padding: 10px 0px;
+  margin-bottom: 10px;
+  color: #050505;
+  font-weight: 500;
+}
+
+.disclosureParagraph{
+  font-size: 0.6em;
+  color: #ccc !important;
+}
+
+.disclosureParagraphGreen{
+  color: #1DB954;
+}
+
+.hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: 0.5;
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+.hr-text::before {
+    content: '';
+    background: #818078;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+  }
+
+.hr-text::after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    color: black;
+    padding: 0 .5em;
+    line-height: 1.5em;
+    color: #050505;
+    background-color: #FFFFFF;
+  
+  }

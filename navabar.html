@@ -17,7 +17,7 @@
 
 
   <!-- Sidebar -->
-  <div class="wrapper">
+  <div class="wrapperSideBar">
     <nav id="sidebar">
       <div class="sidebarHeadings">
         <div class="sidebar-header">
@@ -35,27 +35,31 @@
           </li>
         </ul>
       </div> 
-      <div class="sidebarBottomInfo d-none">
+
+      <!-- loggedInMenu -->
+      <div id="loggedInBottomMenu" class="sidebarBottomInfo d-none">
         <p class="sidebarBottomInfoInstalltheApp"><i class="far fa-arrow-alt-circle-down"></i>Install the app</p>
         <div class="sidebarUserImageContainer">
           <img src="Img/Userimage.jpeg" class="sidebarUserImage" alt="">
           <span class="sidebarUserText">Diego "Ziba" Banovaz</span>          
         </div>
       </div>
-      <div class="sidebarBottomInfo d-flex flex-column">
-        
-        <!-- Trigger SignUp Modal -->
-        <button type="button" class="btn sidebarBottomInfoSignUp" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
-        
-        
+      
 
-        <a href="#" class="sidebarBottomInfoLogin">Login</a>
-        <div>
-          <ul>
-            <li class="sidebarBottomInfoliFirst">Cookie</li>
-            <li class="sidebarBottomInfoliMiddle">Privacy</li>
-            <li class="sidebarBottomInfoliEnd">Policy</li>
-          </ul>
+      <!-- loggedOutMenu -->
+      <div id="loggedOutBottomMenu" class="">
+        <div class="sidebarBottomInfo d-flex flex-column">  
+          <!-- Trigger SignUp Modal -->
+          <button type="button" class="btn sidebarBottomInfoSignUp" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+          <!-- Trigger login Modal -->
+          <button type="button" class="btn sidebarBottomInfoLogin" data-toggle="modal" data-target="#logInModal">Login</button>
+          <div>
+            <ul>
+              <li class="sidebarBottomInfoliFirst">Cookie</li>
+              <li class="sidebarBottomInfoliMiddle">Privacy</li>
+              <li class="sidebarBottomInfoliEnd">Policy</li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
@@ -74,18 +78,185 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>To continue, sign up to Spotify.</p>
-          <button class="signUpWithFacebook"><i class="fab fa-facebook"></i>CONTINUE WITH FACEBOOK</button>
-          <button class="signUpWithApple"><i class="fab fa-apple"></i>CONTINUE WITH APPLE</button>
-          <hr class="hr-text" data-content="OR">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <div class="container-fluid px-3">
+            <div class="">
+              <div class="row">
+                <div class="col-12 text-center">
+                  <p class="formSignUpMainP">To continue, sign up for Spotify.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12" >
+                  <a class="btn btn-block signUpWithFacebook"><i class="fab fa-facebook"></i>CONTINUE WITH FACEBOOK</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <a class="btn btn-block text-white signUpWithApple"><i class="fab fa-apple"></i>CONTINUE WITH APPLE</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <hr class="hr-text" data-content="OR">
+                </div>
+              </div>
+              <form>
+                <div class="row">
+                  <div class="col-12">
+                    <label for="login-username">Email address</label>
+                    <input type="text" class="form-control"  id="signUpEmail" placeholder="Email address or username" required>
+                    <!-- ngIf: accounts.username.$dirty && accounts.username.$invalid -->
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-12">
+                    <label for="login-password">Password</label>
+                    <input type="password" class="form-control" id="signUpPassword" placeholder="Password" required>
+                    <!-- ngIf: accounts.password.$dirty && accounts.password.$invalid -->
+                  </div>
+                </div>
+                <div class="row text-center password-reset">
+                </div>
+                <div class="row row-submit mt-3">
+                  <div class="col-12 col-sm-6 d-flex flex-column justify-content-center">
+                  <div>
+                    <label class="checkbox mb-3 mb-md-0"><span>Remember me</span>
+                      <input type="checkbox" id="login-remember" checked="checked">
+                      <span class="checkmark"></span>
+                    </label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <button class="btn btn-block spotifyColorButton" id="signUpButton">SIGN UP</button>
+                  </div>
+                </div>  
+              </form>
+              <div class="row">
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-12">
+                      <hr class="hr-text" data-content="">
+                    </div>
+                  </div>
+                  <div class="row justify-content-center mt-0">
+                    <p class="formSignUpMainP mt-3">Do you already have an account?</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <a id="sign-up-link" class="btn btn-block btn-default spotifySecondaryButton">LOG IN TO SPOTIFY</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="divider">
+                  </div>
+                  <p class="tos text-center disclosureParagraph">If you click "Log in with Facebook" and you are not a Spotify user, you will be registered and you agree to Spotify's <span class="disclosureParagraphGreen">Terms & Conditions</span>  and <span class="disclosureParagraphGreen"> Privacy Policy</span> </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <!-- End Sign Up Modal -->
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="logInModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <img src="img/Spotify_Logo_RGB_Black.png" class="sidebarLogo">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid px-3">
+            <div class="">
+              <div class="row">
+                <div class="col-12 text-center">
+                  <p class="formSignUpMainP">To continue, login to Spotify.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12" >
+                  <a class="btn btn-block signUpWithFacebook"><i class="fab fa-facebook"></i>CONTINUE WITH FACEBOOK</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <a class="btn btn-block text-white signUpWithApple"><i class="fab fa-apple"></i>CONTINUE WITH APPLE</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <hr class="hr-text" data-content="OR">
+                </div>
+              </div>
+              <form>
+                <div class="row">
+                  <div class="col-12">
+                    <label for="login-username">Email address</label>
+                    <input type="text" class="form-control"  id="loginEmail" placeholder="Email address or username" required>
+                    <!-- ngIf: accounts.username.$dirty && accounts.username.$invalid -->
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-12">
+                    <label for="login-password">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                    <!-- ngIf: accounts.password.$dirty && accounts.password.$invalid -->
+                  </div>
+                </div>
+                <div class="row text-center password-reset">
+                </div>
+                <div class="row row-submit mt-3">
+                  <div class="col-12 col-sm-6 d-flex flex-column justify-content-center">
+                  <div>
+                    <label class="checkbox mb-3 mb-md-0"><span>Remember me</span>
+                      <input type="checkbox" id="login-remember" checked="checked">
+                      <span class="checkmark"></span>
+                    </label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <button class="btn btn-block spotifyColorButton" id="loginButton">LOG IN</button>
+                  </div>
+                  <div class="col-12 text-center text-green mt-3" >
+                    <p><a class="disclosureParagraphGreen" id="reset-password-link">Forgot your password?</a></p>
+                  </div>
+                </div>  
+              </form>
+              <div class="row">
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-12">
+                      <hr class="hr-text" data-content="">
+                    </div>
+                  </div>
+                  <div class="row justify-content-center mt-0">
+                    <p class="formSignUpMainP mt-3">Don't have an account?</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <a id="sign-up-link" class="btn btn-block btn-default spotifySecondaryButton">SIGN UP FOR SPOTIFY</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="divider">
+                  </div>
+                  <p class="tos text-center disclosureParagraph">If you click "Log in with Facebook" and you are not a Spotify user, you will be registered and you agree to Spotify's <span class="disclosureParagraphGreen">Terms & Conditions</span>  and <span class="disclosureParagraphGreen"> Privacy Policy</span> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Login Modal -->
 
   <!-- Downbar Menu -->
   <div class="bottomMenuWrapper">
@@ -142,7 +313,47 @@
   <!-- End Test Section -->
 
     <!--Local Storage-->
-    <script>localStorage.setItem('loggedIn', false)</script>
+    <script>
+      const signUpEmail = document.getElementById('signUpEmail')
+      const signUpPassword = document.getElementById('signUpPassword')
+      const signUpButton = document.getElementById('signUpButton')
+      const loginEmail = document.getElementById('loginEmail')
+      const loginPassword = document.getElementById('loginPassword')
+      const loginButton = document.getElementById('loginButton')
+
+      const loggedInBottomMenu = document.getElementById('loggedInBottomMenu')
+      const loggedOutBottomMenu = document.getElementById('loggedOutBottomMenu')
+
+      
+      window.onload = function () {
+        let loggedIn = localStorage.getItem("LOGGED_IN");
+        
+        displaySidebarFooter()
+
+      }
+
+      function logInUser() {
+
+        localStorage.setItem("LOGGED_IN", true)
+
+        displaySidebarFooter()
+
+      }
+
+      function displaySidebarFooter() {
+        let loggedIn = localStorage.getItem("LOGGED_IN");
+
+        if (loggedIn)
+          loggedInBottomMenu.classList.remove('d-none')
+          loggedOutBottomMenu.classList.add('d-none')
+        }
+      }
+
+      signUpButton.onclick = function(){
+        const email = signUpEmail.value;
+        const password = signUpPassword.value;
+      }
+    </script>
     <!--End Local Storage-->
 
     <!--Bootstrap-->
