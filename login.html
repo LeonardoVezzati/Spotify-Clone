@@ -26,6 +26,11 @@
     margin-right: auto;
     margin-left: auto;
 }
+.wrapper{
+    margin: 0 auto;
+    max-width: 450px;
+  }
+
 .head {
     border-bottom: 1px solid #d9dadc;
     padding: 25px 0 10px;
@@ -41,12 +46,6 @@
     max-width: 100%;
     width: 144px;
     }
-  .wrapper{
-   
-    margin: 0 auto;
-    max-width: 450px;
-  }
-
 
 .btn, .navbar .navbar-nav .navbar-btn {
     padding: 16px 14px 18px;
@@ -154,9 +153,6 @@
   transform: rotate(45deg);
 }
 
-
-
-
 .row {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -208,6 +204,67 @@ h4, p {
      background-color:#fff;
 }
 
+.wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+/*style label to give some more space*/
+.wrapper label {
+    display: block;
+    padding: 12px 0 12px 48px;
+}
+
+/*style and hide original checkbox*/
+.wrapper input {
+  height: 40px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 40px;
+}
+
+/*position new box*/
+.wrapper input + label::before {
+  border: 2px solid;
+  content: "";
+  height: 40px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 40px;
+}
+
+/*svg background styles*/
+/* .wrapper input + label::after {
+  content: "";
+  opacity: 0;
+  background-color:transparent;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check.svg");
+  background-repeat: no-repeat;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  transition: opacity 0.2s ease-in-out;
+  background-color: #47b850;
+} */
+
+/*reveal check for 'on' state*/
+/* .wrapper input:checked + label::after {
+  opacity: 1;
+ background-color: #47b850;
+} */
+
+/*focus styles*/
+/* .wrapper input:focus + label::before {
+  box-shadow: 0 0 0 3px #ffbf47;  
+  outline: 3px solid transparent; /* For Windows high contrast mode.
+
+} */
 
 @media(min-width:700px){
 
@@ -266,12 +323,12 @@ h4, p {
     </div>
     <div class="row">
       <div class="col-12" >
-        <button  class="btn btn-block btn-facebook" style="background-color:#3b5998">Continue with Facebook</button>
+        <a  class="btn btn-block btn-facebook" style="background-color:#3b5998" href="#">Continue with Facebook</a>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
-        <button class="btn btn-block text-white btn-apple" style="background-color:black">Continue with Apple</button>
+        <a class="btn btn-block text-white btn-apple" style="background-color:black" href="#">Continue with Apple</a>
       </div>
     </div>
   
@@ -315,14 +372,19 @@ h4, p {
               <span class="checkmark"></span>
             </label>
           </div>
+
+          <!-- <div class="wrapper">
+            <input id="a11y-issue-1" name="a11y-issues" type="checkbox" value="no-issues">
+            <label for="a11y-issue-1">There are no issues.</label>
+          </div> -->
         </div>
         <div class="col-12 col-sm-6">
-          <button class="btn btn-block btn-green" id="login-button">Log In</button>
+          <a class="btn btn-block btn-green" id="login-button" href="#">Log In</a>
         </div>
      
 
       <div class="col-12 text-center text-green mt-3" >
-          <a style="text-decoration: underline;" id="reset-password-link">Forgot your password?</a>
+          <a style="text-decoration: underline;" id="reset-password-link" href="#">Forgot your password?</a>
       </div>
     </div>
       
