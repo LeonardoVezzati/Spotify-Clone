@@ -12,7 +12,9 @@
   <link rel="stylesheet" href="stylesheet.css">
 
 <style>
+
   *{box-sizing:border-box;}
+
   body{
     margin:0;
     padding-bottom: 5px;
@@ -20,6 +22,7 @@
 }
 
 .container-fluid {
+  height:100vh;
     margin-right: auto;
     margin-left: auto;
 }
@@ -39,6 +42,7 @@
     width: 144px;
     }
   .wrapper{
+   
     margin: 0 auto;
     max-width: 450px;
   }
@@ -77,38 +81,81 @@
 
 }
 
-
-
-@media(min-width:700px){
-
-  .btn-apple, .btn-facebook{
-    padding-top: 14px;
-}
-.btn-apple:before, .btn-facebook:before {
-    font-family: Font Awesome\ 5 Brands;
-    font-size: 16px;
-    margin-right: 14px;
-}
-
-.btn-facebook:before {
-    display: inline-block;
-    content: "\F09A";
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.btn-apple:before {
-    display: inline-block;
-    content: "\F179";
-}
-}
-
-@media(min-width:768px){
-
-.logo{  
-    width: 200px;
-    }
+.checkbox:nth-child(1){
+  color:#c6c6c6;
+  font-size:1em;
 }
 
-  
+
+/* Hide the browser's default checkbox */
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius:5px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox input:checked ~ .checkmark {
+  background-color: #47b850;;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+
 
 .row {
     margin-top: 10px;
@@ -142,9 +189,56 @@ h4, p {
 
 .btn-green {
     color: #fff;
-    background-color: #15883e;
+    background-color: #47b850;
 }
 
+.tos{
+  font-size:.6em;
+  color:#c6c6c6;
+}
+.text-green{
+  color:#47b850;
+}
+
+#recaptcha{
+  position: fixed;
+     bottom: 20px;
+     right: 10px;
+     box-shadow: 0px 0px 5px rgba(100,100,100,.8);
+     background-color:#fff;
+}
+
+
+@media(min-width:700px){
+
+  .btn-apple, .btn-facebook{
+    padding-top: 14px;
+}
+.btn-apple:before, .btn-facebook:before {
+    font-family: Font Awesome\ 5 Brands;
+    font-size: 16px;
+    margin-right: 14px;
+}
+
+.btn-facebook:before {
+    display: inline-block;
+    content: "\F09A";
+}
+
+.btn-apple:before {
+    display: inline-block;
+    content: "\F179";
+}
+}
+
+@media(min-width:768px){
+
+.logo{  
+    width: 200px;
+    }
+}
+
+  
 
 
 </style>
@@ -161,6 +255,7 @@ h4, p {
       </a>
     </div>
   </nav>
+
 <div class="container-fluid px-3">
   <div class="wrapper">
 
@@ -189,13 +284,6 @@ h4, p {
     </div>
 
 
-
-
-
-
-
-
-
     <form>
       <div class="row">
         <div class="col-12">
@@ -218,26 +306,28 @@ h4, p {
       </div>
 
       <div class="row text-center password-reset">
-        <div class="col-12">
-          <p>
-            <a style=" color: #616467; text-decoration: underline;" id="reset-password-link">Forgot your password?</a>
-          </p>
-        </div>
+        
       </div>
       <div class="row row-submit">
-        <div class="col-12 col-sm-6">
-          <div class="checkbox">
-            <label>
-              <input  type="checkbox" id="login-remember">
-              Remember me
-              <span class="control-indicator"></span>
+        <div class="col-12 col-sm-6 d-flex flex-column justify-content-center">
+         <div>
+            <label class="checkbox mb-3 mb-md-0"><span>Remember me</span>
+              <input type="checkbox" id="login-remember" checked="checked">
+              <span class="checkmark"></span>
             </label>
           </div>
         </div>
         <div class="col-12 col-sm-6">
           <button class="btn btn-block btn-green" id="login-button">Log In</button>
         </div>
+     
+
+      <div class="col-12 text-center text-green mt-3" >
+        <p>
+          <a style="text-decoration: underline;" id="reset-password-link">Forgot your password?</a>
+        </p>
       </div>
+    </div>
       
     </form>
       <div class="row">
@@ -249,19 +339,26 @@ h4, p {
             </div>
         </div>
         <div class="row justify-content-center mt-0">
-            <h4>Don't have an account?</h4>
+            <h6>Don't have an account?</h6>
         </div>
-        <div>
             <div class="row">
                 <div class="col-12">
                     <a id="sign-up-link" class="btn btn-block btn-default">Sign up for Spotify</a>
                 </div>
             </div>
-        </div>
     </div>
-</div>
+    <div class="col-12">
+      <div class="divider">
+      </div>
+      <p class="tos text-center">If you click "Log in with Facebook" and you are not a Spotify user, you will be registered and you agree to Spotify's <span class="text-green">Terms & Conditions</span>  and <span class="text-green"> Privacy Policy</span> </p>
+    </div>
+  </div>
 
+ 
         </div>
+          <div id="recaptcha" class="p-2">
+            <img  src="reCaptcha.png">
+          </div>
     </div>
 
   </div>
