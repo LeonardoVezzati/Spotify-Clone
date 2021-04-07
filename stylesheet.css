@@ -1,0 +1,304 @@
+.wrapper{
+  background-color: #050505;
+  width: 200px;
+  height: 90vh;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.sidebarLogo{
+  width: 100px;
+  height: 100%;
+}
+
+.sidebar-header{
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin: auto;
+  width: 100%;
+}
+
+.list-unstyled i{
+  color: rgb(200, 200, 200);
+  margin-right: 20px;
+}
+
+.list-unstyled li a{
+  color: rgb(200, 200, 200);
+}
+
+.list-unstyled i{
+  color: rgb(200, 200, 200);
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.bottomMenuWrapper{
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  height: 10vh;
+  position: fixed;
+  background-color: #282828;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sidebarBottomInfo{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.sidebarBottomInfoInstalltheApp{
+  margin-left: 20px;
+  color: rgb(200, 200, 200);
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.sidebarUserImage{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.sidebarBottomInfoInstalltheApp i{
+  color: rgb(200, 200, 200);
+  margin-right: 20px;
+}
+
+.sidebarUserText{
+  color: rgb(200, 200, 200);
+  font-size: 0.8em;
+}
+
+.bottomMenuWrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottomMenuWrapperLeftAlbumImage{
+  width: 60px;
+  height: 60px;
+}
+
+.bottomMenuWrapperLeftAlbumText{
+  padding: 10px;
+}
+
+.bottomMenuWrapperLeftAlbumText p{
+  margin:0px;
+  color: rgb(200, 200, 200);
+  font-size: 12px;
+}
+
+.bottomMenuWrapperLeftAlbumText h3{
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.bottomMenuWrapperLeftIcons ul{
+  list-style: none;
+  padding: 10px;
+}
+
+.bottomMenuWrapperLeftIcons ul li{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.bottomMenuWrapperLeftIcons ul li i{
+  color: rgb(200, 200, 200);
+}
+
+.bottomMenuWrapperCenter ul{
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+}
+
+.bottomMenuWrapperCenter li{
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.bottomMenuWrapperCenter ul>li{
+  margin-left: 40px;
+}
+
+.bottomMenuWrapperCenter i{
+  color: rgb(200, 200, 200);
+}
+
+.bottomMenuWrapperCenterPlayIcon{
+  font-size: 2em;
+}
+
+.bottomMenuWrapperCenterSecondaryIcon{
+  font-size: 0.7em;
+}
+
+.progressSong{
+  width: 600px;
+  height: 5px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.progressSong::before{
+  content: "0:00";
+  color: #FFFFFF;
+}
+
+.progressSong::after{
+  content: "7:12";
+}
+
+.progressVolume{
+  width: 60px;
+  height: 5px;
+  margin-bottom: 20px;
+}
+
+.bottomMenuWrapperRight ul{
+  list-style: none;
+  padding: 0;
+  padding-bottom: 10px;
+  text-align: center;
+  margin: 0;
+}
+
+.bottomMenuWrapperRight li{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.bottomMenuWrapperRight i{
+  color: rgb(200, 200, 200);
+}
+
+.volumeIcon{
+  display: inline;
+}
+
+.textTest{
+  position: absolute;
+  left: 200px;
+  padding:60px;
+  z-index: -1;
+}
+
+.sidebarBottomInfoSignUp{
+  padding: 5px 30px;
+  background-color: #FFFFFF;
+  color: #050505;
+  border-radius: 30px;
+  width: 85%;
+  text-align:center;
+  margin:auto;
+  margin-bottom: 10px;
+}
+
+.sidebarBottomInfoSignUp a:hover{
+  text-decoration: none;
+  color: #050505;
+}
+
+.sidebarBottomInfoLogin{
+  padding: 5px 30px;
+  background-color: #282828;
+  color: #FFFFFF;
+  border:2px solid #FFFFFF;
+  text-align:center;
+  border-radius: 30px;
+  width: 85%;
+  margin:auto;
+  margin-bottom: 10px;
+}
+
+
+.sidebarBottomInfoLogin a:hover{
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+
+.sidebarBottomInfo ul{
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.sidebarBottomInfoliFirst{
+  color: rgb(200, 200, 200);
+  display: inline-block;
+  padding-right: 10px;
+  font-size: 0.6em;
+  padding-left: 10px;
+  border-right: 1px solid rgb(200, 200, 200);
+}
+
+.sidebarBottomInfoliMiddle{
+  color: rgb(200, 200, 200);
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 0.6em;
+  border-right: 1px solid rgb(200, 200, 200);
+}
+
+.sidebarBottomInfoliEnd{
+  color: rgb(200, 200, 200);
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 0.6em;
+}
+
+.hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: .5;
+  &:before {
+    content: '';
+    // use the linear-gradient for the fading effect
+    // use a solid background color for a solid bar
+    background: linear-gradient(to right, transparent, #818078, transparent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+  }
+  &:after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    color: black;
+    padding: 0 .5em;
+    line-height: 1.5em;
+    // this is really the only tricky part, you need to specify the background color of the container element...
+    color: #818078;
+    background-color: #fcfcfa;
+  }
+}
