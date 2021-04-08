@@ -10,7 +10,11 @@
     <title>Artist Page</title>
 
     <!--Favicon-->
-    <link rel="shortcut icon" type="image/jpg" href="Img/1024px-Spotify_logo_without_text.svg.png"/>
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="Img/1024px-Spotify_logo_without_text.svg.png"
+    />
 
     <!--fonts from google-->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -26,7 +30,7 @@
       crossorigin="anonymous"
     />
     <!--CSS-->
-    <link rel="stylesheet" href="stylesheet.css"/>
+    <link rel="stylesheet" href="stylesheet.css" />
 
     <style>
       @font-face {
@@ -111,7 +115,7 @@
         background-color: rgb(18, 18, 18, 0.5);
       }
       .btn-follow:hover {
-        color:rgb(18, 18, 18, 0.5);
+        color: rgb(18, 18, 18, 0.5);
         background-color: white;
       }
       .btn.dots {
@@ -148,643 +152,821 @@
         bottom: 0;
         left: 35%;
       }
-      .card, .card-body{
+      .card,
+      .card-body {
         color: white;
         border: none;
         background: transparent !important;
         font-weight: bold;
       }
-      h1{
-        background-color:#121212;
+      h1 {
+        background-color: #121212;
         margin: 0;
         color: white;
       }
     </style>
   </head>
   <body>
-
     <!-- Sidebar -->
-  <div class="wrapperSideBar d-none d-sm-block d-md-block d-lg-block">
-    <nav id="sidebar">
-      <div class="sidebarHeadings">
-        <div class="sidebar-header">
-          <img src="img/Spotifylogo.png" class="sidebarLogo" alt="Spotify Logo White Trasparent">
-        </div>
-        <ul class="list-unstyled components">
-          <li class="active">
-            <a href="#homeSubmenu" class=""><i class="fas fa-home"></i>Home</a>
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-search"></i>Search</a>
-          </li>
-          <li>
-            <a href="#pageSubmenu" class=""><i class="fas fa-bars"></i>Pages</a>
-          </li>
-        </ul>
-      </div> 
-
-      <!-- loggedInMenu -->
-      <div id="loggedInBottomMenu" class="sidebarBottomInfo d-none text-left">
-        <p class="sidebarBottomInfoInstalltheApp"><i class="far fa-arrow-alt-circle-down"></i>Install the app</p>
-        <div class="sidebarUserImageContainer dropup">
-          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="Img/Userimage.jpeg" class="sidebarUserImage" alt="">
-            <span class="sidebarUserText">Diego Banovaz</span>          
-          </button>
-          <div class="dropdown-menu dropdownSettings" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item textDropUp" href="#">Settings</a>
-            <a class="dropdown-item textDropUp" href="#" id="logOutButton">Logout</a>
+    <div class="wrapperSideBar d-none d-sm-block d-md-block d-lg-block">
+      <nav id="sidebar">
+        <div class="sidebarHeadings">
+          <div class="sidebar-header">
+            <img
+              src="img/Spotifylogo.png"
+              class="sidebarLogo"
+              alt="Spotify Logo White Trasparent"
+            />
           </div>
-        </div>
-      </div>
-      
-
-      <!-- loggedOutMenu -->
-      <div id="loggedOutBottomMenu" class="">
-        <div class="sidebarBottomInfo d-flex flex-column">  
-          <!-- Trigger SignUp Modal -->
-          <button type="button" class="btn sidebarBottomInfoSignUp" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
-          <!-- Trigger login Modal -->
-          <button type="button" class="btn sidebarBottomInfoLogin" data-toggle="modal" data-target="#logInModal">Login</button>
-          <div>
-            <ul>
-              <li class="sidebarBottomInfoliFirst">Cookie</li>
-              <li class="sidebarBottomInfoliMiddle">Privacy</li>
-              <li class="sidebarBottomInfoliEnd">Policy</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </div>
-
-  <!-- End Sidebar -->
-
-  <!-- SignUp Modal -->
-  <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header text-center">
-          <img src="img/Spotify_Logo_RGB_Black.png" class="sidebarLogo">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid px-3">
-            <div class="">
-              <div class="row">
-                <div class="col-12 text-center">
-                  <p class="formSignUpMainP">To continue, sign up for Spotify.</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12" >
-                  <a class="btn btn-block signUpWithFacebook"><i class="fab fa-facebook"></i>CONTINUE WITH FACEBOOK</a>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <a class="btn btn-block text-white signUpWithApple"><i class="fab fa-apple"></i>CONTINUE WITH APPLE</a>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <hr class="hr-text" data-content="OR">
-                </div>
-              </div>
-              <form>
-                <div class="row">
-                  <div class="col-12">
-                    <label for="login-username">Email address</label>
-                    <input type="text" class="form-control"  id="signUpEmail" placeholder="Email address or username" required>
-                    <!-- ngIf: accounts.username.$dirty && accounts.username.$invalid -->
-                  </div>
-                </div>
-                <div class="row mt-3">
-                  <div class="col-12">
-                    <label for="login-password">Password</label>
-                    <input type="password" class="form-control" id="signUpPassword" placeholder="Password" required>
-                    <!-- ngIf: accounts.password.$dirty && accounts.password.$invalid -->
-                  </div>
-                </div>
-                <div class="row text-center password-reset">
-                </div>
-                <div class="row row-submit mt-3">
-                  <div class="col-12 col-sm-6 d-flex flex-column justify-content-center">
-                  <div>
-                    <label class="checkbox mb-3 mb-md-0"><span>Remember me</span>
-                      <input type="checkbox" id="login-remember" checked="checked">
-                      <span class="checkmark"></span>
-                    </label>
-                    </div>
-                  </div>
-                  <div class="col-12 col-sm-6">
-                    <button class="btn btn-block spotifyColorButton" id="signUpButton" data-dismiss="modal">SIGN UP</button>
-                  </div>
-                </div>  
-              </form>
-              <div class="row">
-                <div class="col-12">
-                  <div class="row">
-                    <div class="col-12">
-                      <hr class="hr-text" data-content="">
-                    </div>
-                  </div>
-                  <div class="row justify-content-center mt-0">
-                    <p class="formSignUpMainP mt-3">Do you already have an account?</p>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <a id="sign-up-link" class="btn btn-block btn-default spotifySecondaryButton">LOG IN TO SPOTIFY</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="divider">
-                  </div>
-                  <p class="tos text-center disclosureParagraph">If you click "Log in with Facebook" and you are not a Spotify user, you will be registered and you agree to Spotify's <span class="disclosureParagraphGreen">Terms & Conditions</span>  and <span class="disclosureParagraphGreen"> Privacy Policy</span> </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Sign Up Modal -->
-
-  <!-- Login Modal -->
-  <div class="modal fade" id="logInModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header text-center">
-          <img src="img/Spotify_Logo_RGB_Black.png" class="sidebarLogo">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid px-3">
-            <div class="">
-              <div class="row">
-                <div class="col-12 text-center">
-                  <p class="formSignUpMainP">To continue, login to Spotify.</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12" >
-                  <a class="btn btn-block signUpWithFacebook"><i class="fab fa-facebook"></i>CONTINUE WITH FACEBOOK</a>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <a class="btn btn-block text-white signUpWithApple"><i class="fab fa-apple"></i>CONTINUE WITH APPLE</a>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <hr class="hr-text" data-content="OR">
-                </div>
-              </div>
-              <form>
-                <div class="row">
-                  <div class="col-12">
-                    <label for="login-username">Email address</label>
-                    <input type="text" class="form-control"  id="loginEmail" placeholder="Email address or username" required>
-                    <!-- ngIf: accounts.username.$dirty && accounts.username.$invalid -->
-                  </div>
-                </div>
-                <div class="row mt-3">
-                  <div class="col-12">
-                    <label for="login-password">Password</label>
-                    <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
-                    <!-- ngIf: accounts.password.$dirty && accounts.password.$invalid -->
-                  </div>
-                </div>
-                <div class="row text-center password-reset">
-                </div>
-                <div class="row row-submit mt-3">
-                  <div class="col-12 col-sm-6 d-flex flex-column justify-content-center">
-                  <div>
-                    <label class="checkbox mb-3 mb-md-0"><span>Remember me</span>
-                      <input type="checkbox" id="login-remember" checked="checked">
-                      <span class="checkmark"></span>
-                    </label>
-                    </div>
-                  </div>
-                  <div class="col-12 col-sm-6">
-                    <button class="btn btn-block spotifyColorButton" id="loginButton" data-dismiss="modal">LOG IN</button>
-                  </div>
-                  <div class="col-12 text-center text-green mt-3" >
-                    <p><a class="disclosureParagraphGreen" id="reset-password-link">Forgot your password?</a></p>
-                  </div>
-                </div>  
-              </form>
-              <div class="row">
-                <div class="col-12">
-                  <div class="row">
-                    <div class="col-12">
-                      <hr class="hr-text" data-content="">
-                    </div>
-                  </div>
-                  <div class="row justify-content-center mt-0">
-                    <p class="formSignUpMainP mt-3">Don't have an account?</p>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <a id="sign-up-link" class="btn btn-block btn-default spotifySecondaryButton">SIGN UP FOR SPOTIFY</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="divider">
-                  </div>
-                  <p class="tos text-center disclosureParagraph">If you click "Log in with Facebook" and you are not a Spotify user, you will be registered and you agree to Spotify's <span class="disclosureParagraphGreen">Terms & Conditions</span>  and <span class="disclosureParagraphGreen"> Privacy Policy</span> </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Login Modal -->
-
-  <!-- Downbar Menu -->
-  <div class="bottomMenuWrapper d-none d-sm-flex d-md-flex d-lg-flex">
-    <div class="bottomMenuWrapperLeft">
-      <div class="d-flex">
-        <img src="Img/Highway 61.PNG" class="bottomMenuWrapperLeftAlbumImage" alt="">
-        <div class="bottomMenuWrapperLeftAlbumText">
-          <h3>Song For My Father</h3>
-          <p>Horace Silver</p>
-        </div>
-        <div class="bottomMenuWrapperLeftIcons">
-          <ul>
-            <li><i class="far fa-heart"></i></li>
-            <li><i class="fas fa-laptop"></i></li>  
+          <ul class="list-unstyled components">
+            <li class="active">
+              <a href="#homeSubmenu" class=""
+                ><i class="fas fa-home"></i>Home</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-search"></i>Search</a>
+            </li>
+            <li>
+              <a href="#pageSubmenu" class=""
+                ><i class="fas fa-bars"></i>Pages</a
+              >
+            </li>
           </ul>
         </div>
-      </div>
-    </div>
-    <div class="bottomMenuWrapperCenter">
-      <div>
-        <ul class="d-flex align-items-center justify-content-center">
-          <li class="bottomMenuWrapperCenterSecondaryIcon"><i class="fas fa-random"></i></li>
-          <li class="bottomMenuWrapperCenterSecondaryIcon"><i class="fas fa-step-backward"></i></li>
-          <li class="bottomMenuWrapperCenterPlayIcon"><i class="far fa-play-circle"></i></li>
-          <li class="bottomMenuWrapperCenterSecondaryIcon"><i class="fas fa-step-forward"></i></li>
-          <li class="bottomMenuWrapperCenterSecondaryIcon"><i class="fas fa-redo"></i></li>
-        </ul>
-      </div>
-      <div class="progress progressSong">
-        <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-    </div>
-    <div class="bottomMenuWrapperRight d-flex align-items-center">
-      <div>
-        <ul>
-          <li><i class="fas fa-bars"></i></li>
-          <li><i class="fas fa-laptop-code"></i></li>
-          <li>
-            <div class="d-flex align-items-center">
-              <i class="fas fa-volume-up"></i>
-              <div class="progress progressVolume mb-0 ml-2">
-                <div class="progress-bar mb-0" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <i class="fas fa-ellipsis-h bottomMenuWrapperRightBars"></i>
-      </div>
-    </div>
-  </div>
-  <!-- End Downbar Menu -->
 
-  <!-- Mobile Top Menu -->
-  <div class="d-flex justify-content-between mobileTopMenu d-block d-sm-none d-md-none d-lg-none d-xl-none">
-    <div class="mobileTopMenuLeft">
-      <i class="fas fa-chevron-left"></i>
-    </div>
-    <div class="mobileTopMenuRight">
-      <ul class="mb-0">
-        <li><i class="far fa-heart"></i></li>
-        <li><i class="fas fa-ellipsis-h"></i></li>
-      </ul>
-    </div>
-  </div>
-  <!-- End Mobile Top Menu -->
-
-  
-  <!-- Mobile Bottom Menu -->
-  <div class="d-flex justify-content-between mobileBottomMenu d-block d-sm-none d-md-none d-lg-none d-xl-none">
-    <div class="BottomMenuSection1 text-center d-flex flex-column align-items-center">
-      <i class="fas fa-home"></i>
-      <p>Home</p>
-    </div>
-    <div class="BottomMenuSection2 text-center d-flex flex-column align-items-center">
-      <i class="fas fa-search"></i>
-      <p>Search</p>
-    </div>
-    <div class="BottomMenuSection3 text-center d-flex flex-column align-items-center">
-      <i class="fas fa-bars"></i>
-      <p>Your Library</p>
-    </div>
-    <div class="BottomMenuSection4 text-center d-flex flex-column align-items-center">
-      <i class="fab fa-spotify"></i>
-      <p>Premium</p>
-    </div>
-  </div>
-  <!-- End Mobile Bottom Menu -->
-
-
-  <!-- Content Section -->
-  <div class="contentSection">
-    
-    
-      <div style="position: relative">
-        <div class="" id="container-img-artist">
-          <img id="img-artist" src="assets/queenonline-com-live-1986.jpg" alt="queen"/>
-          
-          <p class="text-artist-listener text-muted text-center">33,000,575 MONTHLY LISTENERS</p>
-          <h1 class="text-artist-title text-white">Queen</h1>
-          <div class="btn-place text-center">
-            <button type="button" class="btnArtistPage btn-play">PLAY</button>
-            <button type="button" class="btnArtistPage btn-follow">FOLLOW</button>
-            <button type="button" class="btnArtistPage dots" title="More">
-              <svg
-                role="img"
-                height="32"
-                width="32"
-                viewBox="0 0 32 32"
-                class="Svg-ulyrgf-0 hJgLcF"
+        <!-- loggedInMenu -->
+        <div id="loggedInBottomMenu" class="sidebarBottomInfo d-none text-left">
+          <p class="sidebarBottomInfoInstalltheApp">
+            <i class="far fa-arrow-alt-circle-down"></i>Install the app
+          </p>
+          <div class="sidebarUserImageContainer dropup">
+            <button
+              class="btn dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img src="Img/Userimage.jpeg" class="sidebarUserImage" alt="" />
+              <span class="sidebarUserText">Diego Banovaz</span>
+            </button>
+            <div
+              class="dropdown-menu dropdownSettings"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <a class="dropdown-item textDropUp" href="#">Settings</a>
+              <a class="dropdown-item textDropUp" href="#" id="logOutButton"
+                >Logout</a
               >
-                <path
-                  d="M5.998 13.999A2 2 0 105.999 18 2 2 0 005.998 14zm10.001 0A2 2 0 1016 18 2 2 0 0016 14zm10.001 0A2 2 0 1026.001 18 2 2 0 0026 14z"
-                ></path>
-              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- loggedOutMenu -->
+        <div id="loggedOutBottomMenu" class="">
+          <div class="sidebarBottomInfo d-flex flex-column">
+            <!-- Trigger SignUp Modal -->
+            <button
+              type="button"
+              class="btn sidebarBottomInfoSignUp"
+              data-toggle="modal"
+              data-target="#signUpModal"
+            >
+              Sign Up
+            </button>
+            <!-- Trigger login Modal -->
+            <button
+              type="button"
+              class="btn sidebarBottomInfoLogin"
+              data-toggle="modal"
+              data-target="#logInModal"
+            >
+              Login
+            </button>
+            <div>
+              <ul>
+                <li class="sidebarBottomInfoliFirst">Cookie</li>
+                <li class="sidebarBottomInfoliMiddle">Privacy</li>
+                <li class="sidebarBottomInfoliEnd">Policy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- End Sidebar -->
+
+    <!-- SignUp Modal -->
+    <div
+      class="modal fade"
+      id="signUpModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <img src="img/Spotify_Logo_RGB_Black.png" class="sidebarLogo" />
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
             </button>
           </div>
-      
-          <nav class="Page-navigation">
-            <ul class="pagination justify-content-center postionUlArtistPage">
-              <li class="active page-item text-center">
-                <a class="page-link" href="#"
-                  >OVERVIEW
-                  <div class="link-borderBottom"></div
-                ></a>
-              </li>
-              <li class="page-item text-center">
-                <a class="page-link" href="#"
-                  ><div class="link-borderBottom"></div>
-                  RELATED ARTISTS</a
-                >
-              </li>
-              <li class="page-item text-center">
-                <a class="page-link" href="#"
-                  ><div class="link-borderBottom"></div>
-                  ABOUT</a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    
-    
-    <main role="main">
-      <div class="album py-5">
-        <div class="container">
-          <h1 class="mb-5">Albums</h1>
-          <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div class="card mb-4">
-                <img
-                  src="https://i.scdn.co/image/ab67616d00001e02e8b066f70c206551210d902b"
-                  alt="Bohemian Rhapsody (The Original Soundtrack)"
-                />
-                <div class="card-body">
-                  <p class="card-text text-center">
-                    Bohemian Rhapsody (The Original Soundtrack)
-                  </p>
-                  <p class="card-text text-center">Queen</p>
-                  
+          <div class="modal-body">
+            <div class="container-fluid px-3">
+              <div class="">
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <p class="formSignUpMainP">
+                      To continue, sign up for Spotify.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div class="card mb-4">
-                <img
-                  src="https://i.scdn.co/image/ab67616d00001e02a97714ae03be2b2ff2aa2dbb"
-                  alt="On Air"
-                />
-  
-                <div class="card-body">
-                  <p class="card-text text-center">On Air</p>
-                  <p class="card-text text-center">Queen</p>
-                  
+                <div class="row">
+                  <div class="col-12">
+                    <a class="btn btn-block signUpWithFacebook"
+                      ><i class="fab fa-facebook"></i>CONTINUE WITH FACEBOOK</a
+                    >
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div class="card mb-4">
-                <img
-                  src="https://i.scdn.co/image/ab67616d00001e0282ae0f628e5a39196ac9083b"
-                  alt="A Night At The Odeon"
-                />
-                <div class="card-body">
-                  <p class="card-text text-center">A Night At The Odeon</p>
-                  <p class="card-text text-center">Queen</p>
-                  
+                <div class="row">
+                  <div class="col-12">
+                    <a class="btn btn-block text-white signUpWithApple"
+                      ><i class="fab fa-apple"></i>CONTINUE WITH APPLE</a
+                    >
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div class="card mb-4">
-                <img
-                  src="https://i.scdn.co/image/ab67616d00001e022f3e43381deaf6505880b1f6"
-                  alt="Live At The Rainbow"
-                />
-                <div class="card-body">
-                  <p class="card-text text-center">Live At The Rainbow</p>
-                  <p class="card-text text-center">Queen</p>
-                  
+                <div class="row">
+                  <div class="col-12">
+                    <hr class="hr-text" data-content="OR" />
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div class="card mb-4">
-                <img
-                  src="https://i.scdn.co/image/ab67616d00001e0256844a498ad89bd43d4756a7"
-                  alt="Live At The Rainbow (Deluxe)"
-                />
-                <div class="card-body">
-                  <p class="card-text text-center">Live At The Rainbow (Deluxe)</p>
-                  <p class="card-text text-center">Queen</p>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div class="card mb-4">
-                <img
-                  src="https://i.scdn.co/image/ab67616d00001e021092d27726b965d04ef427e0"
-                  alt="Hungarian Rhapsody (Live In Budapest / 1986)"
-                />
-                <div class="card-body">
-                  <p class="card-text text-center">
-                    Hungarian Rhapsody (Live In Budapest / 1986)
-                  </p>
-                  <p class="card-text text-center">Queen</p>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div class="card mb-4">
-                <img
-                  src="https://i.scdn.co/image/ab67616d00001e02f289327ca505f7acc3a3a72f"
-                  alt="The Cosmos Rocks"
-                />
-                <div class="card-body">
-                  <p class="card-text text-center">The Cosmos Rocks</p>
-                  <p class="card-text text-center">Queen</p>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div class="card mb-4">
-                <img
-                  src="https://i.scdn.co/image/ab67616d00001e02efd5124f95524b047ff71be8"
-                  alt="Queen Rock Montreal"
-                />
-                <div class="card-body">
-                  <p class="card-text text-center">Queen Rock Montreal</p>
-                  <p class="card-text text-center">Queen</p>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div class="card mb-4">
-                <img
-                  src="https://i.scdn.co/image/ab67616d00001e025cb4de900d6b4d66a778e538"
-                  alt="Return Of The Champions"
-                />
-                <div class="card-body">
-                  <p class="card-text text-center">Return Of The Champions</p>
-                  <p class="card-text text-center">Queen</p>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div class="card mb-4">
-                <img
-                  src="https://i.scdn.co/image/ab67616d00001e0224c4c0836bde217042af8dbf"
-                  alt="On Fire: Live At The Bowl"
-                />
-  
-                <div class="card-body">
-                  <p class="card-text text-center">On Fire: Live At The Bowl</p>
-                  <p class="card-text text-center">Queen</p>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div class="card mb-4">
-                <img
-                  src="https://i.scdn.co/image/ab67616d00001e025f8c271d01157fdb59478f14"
-                  alt="Made In Heaven (2011 Remaster)"
-                />
-                <div class="card-body">
-                  <p class="card-text text-center">Made In Heaven (2011 Remaster)</p>
-                  <p class="card-text text-center">Queen</p>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-              <div class="card mb-4">
-                <img
-                  src="https://i.scdn.co/image/ab67616d00001e0295b06b0399c5f32d804dbb89"
-                  alt="Made In Heaven (Deluxe Edition 2011 Remaster)"
-                />
-                <div class="card-body">
-                  <p class="card-text text-center">
-                    Made In Heaven (Deluxe Edition 2011 Remaster)
-                  </p>
-                  <p class="card-text text-center">Queen</p>
-                  
+                <form>
+                  <div class="row">
+                    <div class="col-12">
+                      <label for="login-username">Email address</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="signUpEmail"
+                        placeholder="Email address or username"
+                        required
+                      />
+                      <!-- ngIf: accounts.username.$dirty && accounts.username.$invalid -->
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-12">
+                      <label for="login-password">Password</label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="signUpPassword"
+                        placeholder="Password"
+                        required
+                      />
+                      <!-- ngIf: accounts.password.$dirty && accounts.password.$invalid -->
+                    </div>
+                  </div>
+                  <div class="row text-center password-reset"></div>
+                  <div class="row row-submit mt-3">
+                    <div
+                      class="col-12 col-sm-6 d-flex flex-column justify-content-center"
+                    >
+                      <div>
+                        <label class="checkbox mb-3 mb-md-0"
+                          ><span>Remember me</span>
+                          <input
+                            type="checkbox"
+                            id="login-remember"
+                            checked="checked"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <button
+                        class="btn btn-block spotifyColorButton"
+                        id="signUpButton"
+                        data-dismiss="modal"
+                      >
+                        SIGN UP
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-12">
+                        <hr class="hr-text" data-content="" />
+                      </div>
+                    </div>
+                    <div class="row justify-content-center mt-0">
+                      <p class="formSignUpMainP mt-3">
+                        Do you already have an account?
+                      </p>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <a
+                          id="sign-up-link"
+                          class="btn btn-block btn-default spotifySecondaryButton"
+                          >LOG IN TO SPOTIFY</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="divider"></div>
+                    <p class="tos text-center disclosureParagraph">
+                      If you click "Log in with Facebook" and you are not a
+                      Spotify user, you will be registered and you agree to
+                      Spotify's
+                      <span class="disclosureParagraphGreen"
+                        >Terms & Conditions</span
+                      >
+                      and
+                      <span class="disclosureParagraphGreen">
+                        Privacy Policy</span
+                      >
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
-  
+    </div>
+    <!-- End Sign Up Modal -->
 
-  </div>
-  <!-- End Content Section -->
+    <!-- Login Modal -->
+    <div
+      class="modal fade"
+      id="logInModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <img src="img/Spotify_Logo_RGB_Black.png" class="sidebarLogo" />
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid px-3">
+              <div class="">
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <p class="formSignUpMainP">
+                      To continue, login to Spotify.
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <a class="btn btn-block signUpWithFacebook"
+                      ><i class="fab fa-facebook"></i>CONTINUE WITH FACEBOOK</a
+                    >
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <a class="btn btn-block text-white signUpWithApple"
+                      ><i class="fab fa-apple"></i>CONTINUE WITH APPLE</a
+                    >
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <hr class="hr-text" data-content="OR" />
+                  </div>
+                </div>
+                <form>
+                  <div class="row">
+                    <div class="col-12">
+                      <label for="login-username">Email address</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="loginEmail"
+                        placeholder="Email address or username"
+                        required
+                      />
+                      <!-- ngIf: accounts.username.$dirty && accounts.username.$invalid -->
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-12">
+                      <label for="login-password">Password</label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="loginPassword"
+                        placeholder="Password"
+                        required
+                      />
+                      <!-- ngIf: accounts.password.$dirty && accounts.password.$invalid -->
+                    </div>
+                  </div>
+                  <div class="row text-center password-reset"></div>
+                  <div class="row row-submit mt-3">
+                    <div
+                      class="col-12 col-sm-6 d-flex flex-column justify-content-center"
+                    >
+                      <div>
+                        <label class="checkbox mb-3 mb-md-0"
+                          ><span>Remember me</span>
+                          <input
+                            type="checkbox"
+                            id="login-remember"
+                            checked="checked"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <button
+                        class="btn btn-block spotifyColorButton"
+                        id="loginButton"
+                        data-dismiss="modal"
+                      >
+                        LOG IN
+                      </button>
+                    </div>
+                    <div class="col-12 text-center text-green mt-3">
+                      <p>
+                        <a
+                          class="disclosureParagraphGreen"
+                          id="reset-password-link"
+                          >Forgot your password?</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </form>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-12">
+                        <hr class="hr-text" data-content="" />
+                      </div>
+                    </div>
+                    <div class="row justify-content-center mt-0">
+                      <p class="formSignUpMainP mt-3">Don't have an account?</p>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <a
+                          id="sign-up-link"
+                          class="btn btn-block btn-default spotifySecondaryButton"
+                          >SIGN UP FOR SPOTIFY</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="divider"></div>
+                    <p class="tos text-center disclosureParagraph">
+                      If you click "Log in with Facebook" and you are not a
+                      Spotify user, you will be registered and you agree to
+                      Spotify's
+                      <span class="disclosureParagraphGreen"
+                        >Terms & Conditions</span
+                      >
+                      and
+                      <span class="disclosureParagraphGreen">
+                        Privacy Policy</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Login Modal -->
 
-<!-- Content Section -->
+    <!-- Downbar Menu -->
+    <div class="bottomMenuWrapper d-none d-sm-flex d-md-flex d-lg-flex">
+      <div class="bottomMenuWrapperLeft">
+        <div class="d-flex">
+          <img
+            src="Img/Highway 61.PNG"
+            class="bottomMenuWrapperLeftAlbumImage"
+            alt=""
+          />
+          <div class="bottomMenuWrapperLeftAlbumText">
+            <h3>Song For My Father</h3>
+            <p>Horace Silver</p>
+          </div>
+          <div class="bottomMenuWrapperLeftIcons">
+            <ul>
+              <li><i class="far fa-heart"></i></li>
+              <li><i class="fas fa-laptop"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bottomMenuWrapperCenter">
+        <div>
+          <ul class="d-flex align-items-center justify-content-center">
+            <li class="bottomMenuWrapperCenterSecondaryIcon">
+              <i class="fas fa-random"></i>
+            </li>
+            <li class="bottomMenuWrapperCenterSecondaryIcon">
+              <i class="fas fa-step-backward"></i>
+            </li>
+            <li class="bottomMenuWrapperCenterPlayIcon">
+              <i class="far fa-play-circle"></i>
+            </li>
+            <li class="bottomMenuWrapperCenterSecondaryIcon">
+              <i class="fas fa-step-forward"></i>
+            </li>
+            <li class="bottomMenuWrapperCenterSecondaryIcon">
+              <i class="fas fa-redo"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="progress progressSong">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            aria-valuenow="50"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+      </div>
+      <div class="bottomMenuWrapperRight d-flex align-items-center">
+        <div>
+          <ul>
+            <li><i class="fas fa-bars"></i></li>
+            <li><i class="fas fa-laptop-code"></i></li>
+            <li>
+              <div class="d-flex align-items-center">
+                <i class="fas fa-volume-up"></i>
+                <div class="progress progressVolume mb-0 ml-2">
+                  <div
+                    class="progress-bar mb-0"
+                    role="progressbar"
+                    aria-valuenow="50"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <i class="fas fa-ellipsis-h bottomMenuWrapperRightBars"></i>
+        </div>
+      </div>
+    </div>
+    <!-- End Downbar Menu -->
 
+    <!-- Mobile Top Menu -->
+    <div
+      class="d-flex justify-content-between mobileTopMenu d-block d-sm-none d-md-none d-lg-none d-xl-none"
+    >
+      <div class="mobileTopMenuLeft">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+      <div class="mobileTopMenuRight">
+        <ul class="mb-0">
+          <li><i class="far fa-heart"></i></li>
+          <li><i class="fas fa-ellipsis-h"></i></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Mobile Top Menu -->
 
+    <!-- Mobile Bottom Menu -->
+    <div
+      class="d-flex justify-content-between mobileBottomMenu d-block d-sm-none d-md-none d-lg-none d-xl-none"
+    >
+      <div
+        class="BottomMenuSection1 text-center d-flex flex-column align-items-center"
+      >
+        <i class="fas fa-home"></i>
+        <p>Home</p>
+      </div>
+      <div
+        class="BottomMenuSection2 text-center d-flex flex-column align-items-center"
+      >
+        <i class="fas fa-search"></i>
+        <p>Search</p>
+      </div>
+      <div
+        class="BottomMenuSection3 text-center d-flex flex-column align-items-center"
+      >
+        <i class="fas fa-bars"></i>
+        <p>Your Library</p>
+      </div>
+      <div
+        class="BottomMenuSection4 text-center d-flex flex-column align-items-center"
+      >
+        <i class="fab fa-spotify"></i>
+        <p>Premium</p>
+      </div>
+    </div>
+    <!-- End Mobile Bottom Menu -->
 
+    <!-- Content Section -->
+    <div class="contentSection">
+      <div class="" id="container-img-artist">
+        <img
+          id="img-artist"
+          src="assets/queenonline-com-live-1986.jpg"
+          alt="queen"
+        />
 
+        <p class="text-artist-listener text-muted text-center">
+          33,000,575 MONTHLY LISTENERS
+        </p>
+        <h1 class="text-artist-title text-white">Queen</h1>
+        <div class="btn-place text-center">
+          <button type="button" class="btnArtistPage btn-play">PLAY</button>
+          <button type="button" class="btnArtistPage btn-follow">FOLLOW</button>
+          <button type="button" class="btnArtistPage dots" title="More">
+            <svg
+              role="img"
+              height="32"
+              width="32"
+              viewBox="0 0 32 32"
+              class="Svg-ulyrgf-0 hJgLcF"
+            >
+              <path
+                d="M5.998 13.999A2 2 0 105.999 18 2 2 0 005.998 14zm10.001 0A2 2 0 1016 18 2 2 0 0016 14zm10.001 0A2 2 0 1026.001 18 2 2 0 0026 14z"
+              ></path>
+            </svg>
+          </button>
+        </div>
 
-<!-- End Content Section -->
+        <nav class="Page-navigation">
+          <ul class="pagination justify-content-center postionUlArtistPage">
+            <li class="active page-item text-center">
+              <a class="page-link" href="#"
+                >OVERVIEW
+                <div class="link-borderBottom"></div
+              ></a>
+            </li>
+            <li class="page-item text-center">
+              <a class="page-link" href="#"
+                ><div class="link-borderBottom"></div>
+                RELATED ARTISTS</a
+              >
+            </li>
+            <li class="page-item text-center">
+              <a class="page-link" href="#"
+                ><div class="link-borderBottom"></div>
+                ABOUT</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
 
-  <!--Local Storage-->
-  <script>
-    const signUpEmail = document.getElementById('signUpEmail')
-    const signUpPassword = document.getElementById('signUpPassword')
-    const signUpButton = document.getElementById('signUpButton')
-    const loginEmail = document.getElementById('loginEmail')
-    const loginPassword = document.getElementById('loginPassword')
-    const loginButton = document.getElementById('loginButton')
-    const logOutButton = document.getElementById('logOutButton')
+      <main role="main">
+        <div class="album py-5">
+          <div class="container">
+            <h1 class="mb-5">Albums</h1>
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card mb-4">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e02e8b066f70c206551210d902b"
+                    alt="Bohemian Rhapsody (The Original Soundtrack)"
+                  />
+                  <div class="card-body">
+                    <p class="card-text text-center">
+                      Bohemian Rhapsody (The Original Soundtrack)
+                    </p>
+                    <p class="card-text text-center">Queen</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card mb-4">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e02a97714ae03be2b2ff2aa2dbb"
+                    alt="On Air"
+                  />
 
-    const loggedInBottomMenu = document.getElementById('loggedInBottomMenu')
-    const loggedOutBottomMenu = document.getElementById('loggedOutBottomMenu')
+                  <div class="card-body">
+                    <p class="card-text text-center">On Air</p>
+                    <p class="card-text text-center">Queen</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card mb-4">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e0282ae0f628e5a39196ac9083b"
+                    alt="A Night At The Odeon"
+                  />
+                  <div class="card-body">
+                    <p class="card-text text-center">A Night At The Odeon</p>
+                    <p class="card-text text-center">Queen</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card mb-4">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e022f3e43381deaf6505880b1f6"
+                    alt="Live At The Rainbow"
+                  />
+                  <div class="card-body">
+                    <p class="card-text text-center">Live At The Rainbow</p>
+                    <p class="card-text text-center">Queen</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card mb-4">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e0256844a498ad89bd43d4756a7"
+                    alt="Live At The Rainbow (Deluxe)"
+                  />
+                  <div class="card-body">
+                    <p class="card-text text-center">
+                      Live At The Rainbow (Deluxe)
+                    </p>
+                    <p class="card-text text-center">Queen</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card mb-4">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e021092d27726b965d04ef427e0"
+                    alt="Hungarian Rhapsody (Live In Budapest / 1986)"
+                  />
+                  <div class="card-body">
+                    <p class="card-text text-center">
+                      Hungarian Rhapsody (Live In Budapest / 1986)
+                    </p>
+                    <p class="card-text text-center">Queen</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card mb-4">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e02f289327ca505f7acc3a3a72f"
+                    alt="The Cosmos Rocks"
+                  />
+                  <div class="card-body">
+                    <p class="card-text text-center">The Cosmos Rocks</p>
+                    <p class="card-text text-center">Queen</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card mb-4">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e02efd5124f95524b047ff71be8"
+                    alt="Queen Rock Montreal"
+                  />
+                  <div class="card-body">
+                    <p class="card-text text-center">Queen Rock Montreal</p>
+                    <p class="card-text text-center">Queen</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card mb-4">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e025cb4de900d6b4d66a778e538"
+                    alt="Return Of The Champions"
+                  />
+                  <div class="card-body">
+                    <p class="card-text text-center">Return Of The Champions</p>
+                    <p class="card-text text-center">Queen</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card mb-4">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e0224c4c0836bde217042af8dbf"
+                    alt="On Fire: Live At The Bowl"
+                  />
 
-    
-    window.onload = function () {
-      let loggedIn = localStorage.getItem("LOGGED_IN");
-      displaySidebarFooter();
-    }
+                  <div class="card-body">
+                    <p class="card-text text-center">
+                      On Fire: Live At The Bowl
+                    </p>
+                    <p class="card-text text-center">Queen</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card mb-4">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e025f8c271d01157fdb59478f14"
+                    alt="Made In Heaven (2011 Remaster)"
+                  />
+                  <div class="card-body">
+                    <p class="card-text text-center">
+                      Made In Heaven (2011 Remaster)
+                    </p>
+                    <p class="card-text text-center">Queen</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                <div class="card mb-4">
+                  <img
+                    src="https://i.scdn.co/image/ab67616d00001e0295b06b0399c5f32d804dbb89"
+                    alt="Made In Heaven (Deluxe Edition 2011 Remaster)"
+                  />
+                  <div class="card-body">
+                    <p class="card-text text-center">
+                      Made In Heaven (Deluxe Edition 2011 Remaster)
+                    </p>
+                    <p class="card-text text-center">Queen</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- End Content Section -->
 
-    function logInUser() {
-      localStorage.setItem("LOGGED_IN", true);
-      displaySidebarFooter();
-    }
+    <!-- Content Section -->
 
-    function logOutUser() {
-      localStorage.clear();
-      location.reload();
-    }
+    <!-- End Content Section -->
 
-    function displaySidebarFooter() {
-      let loggedIn = localStorage.getItem("LOGGED_IN");
-      if (loggedIn){
-        loggedInBottomMenu.classList.remove('d-none');
-        loggedOutBottomMenu.classList.add('d-none');
-      } else {
-        loggedOutBottomMenu.classList.remove('d-none');
-        loggedInBottomMenu.classList.add('d-none');
+    <!--Local Storage-->
+    <script>
+      const signUpEmail = document.getElementById("signUpEmail");
+      const signUpPassword = document.getElementById("signUpPassword");
+      const signUpButton = document.getElementById("signUpButton");
+      const loginEmail = document.getElementById("loginEmail");
+      const loginPassword = document.getElementById("loginPassword");
+      const loginButton = document.getElementById("loginButton");
+      const logOutButton = document.getElementById("logOutButton");
+
+      const loggedInBottomMenu = document.getElementById("loggedInBottomMenu");
+      const loggedOutBottomMenu = document.getElementById(
+        "loggedOutBottomMenu"
+      );
+
+      window.onload = function () {
+        let loggedIn = localStorage.getItem("LOGGED_IN");
+        displaySidebarFooter();
+      };
+
+      function logInUser() {
+        localStorage.setItem("LOGGED_IN", true);
+        displaySidebarFooter();
       }
-    }
 
-    signUpButton.onclick = logInUser
-    logOutButton.onclick = logOutUser
+      function logOutUser() {
+        localStorage.clear();
+        location.reload();
+      }
 
-  </script>
-  <!--End Local Storage-->
-    
+      function displaySidebarFooter() {
+        let loggedIn = localStorage.getItem("LOGGED_IN");
+        if (loggedIn) {
+          loggedInBottomMenu.classList.remove("d-none");
+          loggedOutBottomMenu.classList.add("d-none");
+        } else {
+          loggedOutBottomMenu.classList.remove("d-none");
+          loggedInBottomMenu.classList.add("d-none");
+        }
+      }
+
+      signUpButton.onclick = logInUser;
+      logOutButton.onclick = logOutUser;
+    </script>
+    <!--End Local Storage-->
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
