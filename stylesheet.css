@@ -43,7 +43,9 @@
 }
 
 .bottomMenuWrapper{
-  max-width: 100vh;
+  max-width: 100vw;
+  width: 100vw;
+  margin: 0;
   position: absolute;
   bottom: 0px;
   height: 10vh;
@@ -261,7 +263,17 @@
 @media (max-width: 575px) {
   .contentSection{
     left: 0px !important;
-    top: 10vh;
+    right: 0px;
+    width: 100vw !important;
+  }
+  #container-img-artist{
+    width: 100vw !important;
+  }
+  #container-img-artist::after{
+    width: 100vw !important;
+  }
+  #img-artist{
+    width: 100vw !important;
   }
 }
 
@@ -303,9 +315,10 @@
 
 .contentSection{
   position: absolute;
-  left: 200px;
+  right: 0px;
   z-index: -1;
   width: calc(100vw - 200px);
+  max-width: calc(100vw - 200px);
   box-sizing: border-box;
 }
 
@@ -399,10 +412,6 @@ nav {
   background: transparent;
   justify-content: center;
   text-align: center;
-}
-span {
-  font-size: 13px;
-  display: flex;
 }
 
 .signUpWithFacebook{
@@ -541,10 +550,6 @@ span {
     font-size: 1.6em;
   }
 
-  body{
-    background-color: teal;
-  }
-
   .mobileBottomMenu{
     position: absolute;
     position: fixed;
@@ -571,5 +576,66 @@ span {
   }
 
   .maxWidthVW{
-    max-width: 800px;
+    max-width: calc(100vw - 200px);
+  }
+
+  .textCenteredImageArtistPage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .page-item.active .link-borderBottom {
+    color: white;
+    margin-top: 5px;
+    border-bottom: 2px solid #1DB954;
+    position: absolute;
+    right: 20%;
+    left: 20%;
+  }
+
+  .page-link {
+    border: none;
+    color: white;
+    background-color: transparent;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+  .page-item .page-link {
+    color: gray;
+    background-color: transparent;
+  }
+  .page-item.active .page-link {
+    color: white;
+    background-color: transparent;
+  }
+  
+  .Page-navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 10px;
+  }
+
+  .homePageBody{
+    background-color: rgb(71,101,139) !important;
+    background-color: linear-gradient(124deg, rgba(71,101,139,1) 0%, rgba(36,68,107,1) 27%, rgba(10,20,31,1) 100%) !important;
+  }
+
+  .marginTop{
+    margin-top: 80px;
+  }
+
+  .homePageImage{
+    box-shadow: 4px 0px 16px rgb(36, 68, 107);
+  }
+
+  .postionUlArtistPage{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }

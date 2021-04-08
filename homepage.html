@@ -13,6 +13,10 @@
       href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@800&display=swap"
       rel="stylesheet"
     />
+
+    <!--Favicon-->
+    <link rel="shortcut icon" type="image/jpg" href="Img/1024px-Spotify_logo_without_text.svg.png"/>
+
     <!--Bootstrap-->
     <link
       rel="stylesheet"
@@ -22,94 +26,9 @@
     />
     <!--CSS-->
     <link rel="stylesheet" href="stylesheet.css" />
-    
-    <style>
-      body {
-        background-color: rgb(36, 68, 107);
-        background-color: linear-gradient(
-          164deg,
-          rgba(36, 68, 107, 1) 0%,
-          rgba(36, 68, 107, 1) 27%,
-          rgba(10, 20, 31, 1) 100%
-        );
-        color: white;
-      }
-      div > a {
-        color: white;
-        font-size: 1px;
-        font-weight: 100px;
-      }
-      h3 {
-        font-family: 'Gothic A1', sans-serif;
-      }
-      nav {
-        background: transparent;
-        justify-content: center;
-        text-align: center;
-      }
-      /* .navbar-brand {
-        display: inline-block;
-        margin-right: 30px;
-        font-size: 13px;
-        line-height: inherit;
-        white-space: nowrap;
-      }
-      .navbar-brand:hover {
-        border-bottom: 1px solid black;
-      }
-
-      a {
-        color: white;
-        text-decoration: none;
-        background-color: transparent;
-        opacity: 0.7;
-        transition: 0.8s;
-      }
-      a:hover {
-        color: white;
-        text-shadow: 0 0 5px white;
-      } */
-      /* div .col {
-  text-align: center;
-} */
-      span {
-        font-size: 13px;
-        display: block;
-        text-align: center;
-      }
-      .Page-navigation {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin-top: 10px;
-      }
-
-      .page-link {
-        border: none;
-        color: white;
-        background-color: transparent;
-        font-size: 10px;
-      }
-      .page-item .page-link {
-        color: gray;
-        background-color: transparent;
-      }
-      .page-item.active .page-link {
-        color: white;
-        background-color: transparent;
-      }
-      .page-item.active .link-borderBottom {
-        color: white;
-        border-bottom: 1.5px solid green;
-        position: absolute;
-        right: 33%;
-        bottom: 4;
-        left: 33%;
-      }
-    </style>
   </head>
-  <body>
+  
+  <body class="homePageBody">
 
     <!-- Sidebar -->
   <div class="wrapperSideBar d-none d-sm-block d-md-block d-lg-block">
@@ -120,7 +39,7 @@
         </div>
         <ul class="list-unstyled components">
           <li class="active">
-            <a href="#homeSubmenu" class=""><i class="fas fa-home"></i>Home</a>
+            <a href="homepage.html"><i class="fas fa-home"></i>Home</a>
           </li>
           <li>
             <a href="#"><i class="fas fa-search"></i>Search</a>
@@ -486,93 +405,93 @@
     </div>
 
     <div class="container mb-5">
-      <h3>#THROWBACKTHURSDAY</h3>
-      <div class="row mt-3 mb-5 text-center">
-        <div class="col col-12 col-md-6 col-lg-2 pr-1 pb-3">
+      <h3 class="marginTop">#THROWBACKTHURSDAY</h3>
+      <div class="row mb-3 text-center">
+        <div class="col col-12 col-md-6 col-lg-2 p-2">
           <img
-            src="http://placehold.it/190x173"
-            class="img-fluid mb-1"
+            src="Img/VIRAL_GLOBAL_DEFAULT.jpg"
+            class="img-fluid mb-1 homePageImage"
             alt=""
           />
-          <span>karaoke</span>
+          <p class="mt-2 font-weight-bold">Karaoke</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 pr-1 pb-3">
+        <div class="col col-12 col-md-6 col-lg-2 p-2">
           <img
-            src="http://placehold.it/190x173"
-            class="img-fluid mb-1"
+            src="Img/REGIONAL_GLOBAL_DEFAULT.jpg"
+            class="img-fluid mb-1 homePageImage"
             alt=""
           />
-          <span>lyricist</span>
+          <p class="mt-2 font-weight-bold">Lyricist</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 pr-1 pb-3">
+        <div class="col col-12 col-md-6 col-lg-2 p-2">
           <img
-            src="http://placehold.it/190x173"
-            class="img-fluid mb-1"
+            src="Img/REGIONAL_CA_DEFAULT.jpg"
+            class="img-fluid mb-1 homePageImage"
             alt=""
           />
-          <span>Frequent Rotation</span>
+          <p class="mt-2 font-weight-bold">Frequent Rotation</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 pr-1 pb-3">
+        <div class="col col-12 col-md-6 col-lg-2 p-2">
           <img
-            src="http://placehold.it/190x173"
-            class="img-fluid mb-1"
+            src="Img/region_au_default.jpg"
+            class="img-fluid mb-1 homePageImage"
             alt=""
           />
-          <span>00s Italy</span>
+          <p class="mt-2 font-weight-bold">00s Italy</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 pr-1 pb-3">
+        <div class="col col-12 col-md-6 col-lg-2 p-2">
           <img
-            src="http://placehold.it/190x173"
-            class="img-fluid mb-1"
+            src="Img/region_be_default.jpg"
+            class="img-fluid mb-1 homePageImage"
             alt=""
           />
-          <span>Cocktail Hour</span>
+          <p class="mt-2 font-weight-bold">Cocktail Hour</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 pr-1 pb-3">
+        <div class="col col-12 col-md-6 col-lg-2 p-2">
           <img
-            src="http://placehold.it/190x173"
-            class="img-fluid mb-1"
+            src="Img/region_no_default.jpg"
+            class="img-fluid mb-1 homePageImage"
             alt=""
           />
-          <span>I Love My '90s Hip-Hop</span>
+          <p class="mt-2 font-weight-bold">I Love My '90s Hip-Hop</p>
         </div>
       </div>
       <!-- </div> -->
 
       <!-- <div class="container ml-5"> -->
-      <h3>rankings</h3>
-      <div class="row mt-3 text-center">
-        <div class="col col-12 col-md-6 col-lg-2 pr-1 pb-3">
+      <h3>Rankings</h3>
+      <div class="row p-0 text-center">
+        <div class="col col-12 col-md-6 col-lg-2 p-2">
           <img
-            src="http://placehold.it/190x173"
-            class="img-fluid mb-1"
+            src="Img/region_be_default.jpg"
+            class="img-fluid mb-1 homePageImage"
             alt=""
           />
-          <span>Top 50 - Italy</span>
+          <p class="mt-2 font-weight-bold">Top 50 - Italy</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 pr-1 pb-3">
+        <div class="col col-12 col-md-6 col-lg-2 p-2">
           <img
-            src="http://placehold.it/190x173"
-            class="img-fluid mb-1"
+            src="Img/region_no_default.jpg"
+            class="img-fluid mb-1 homePageImage"
             alt=""
           />
-          <span>Top 50 - Global</span>
+          <p class="mt-2 font-weight-bold">Top 50 - Global</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 pr-1 pb-3">
+        <div class="col col-12 col-md-6 col-lg-2 p-2">
           <img
-            src="http://placehold.it/190x173"
-            class="img-fluid mb-1"
+            src="Img/VIRAL_GLOBAL_DEFAULT.jpg"
+            class="img-fluid mb-1 homePageImage"
             alt=""
           />
-          <span>Viral 50 - Global</span>
+          <p class="mt-2 font-weight-bold">Viral 50 - Global</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 pr-1 pb-3">
+        <div class="col col-12 col-md-6 col-lg-2 p-2">
           <img
-            src="http://placehold.it/190x173"
-            class="img-fluid mb-1"
+            src="Img/REGIONAL_GLOBAL_DEFAULT.jpg"
+            class="img-fluid mb-1 homePageImage"
             alt=""
           />
-          <span>Viral 50 - Italy</span>
+          <p class="mt-2 font-weight-bold">Viral 50 - Italy</p>
         </div>
       </div>
     </div>
