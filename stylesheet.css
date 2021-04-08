@@ -394,14 +394,8 @@
 }
 
 body {
-  background: rgb(36, 68, 107);
-  background: linear-gradient(
-    164deg,
-    rgba(36, 68, 107, 1) 0%,
-    rgba(36, 68, 107, 1) 27%,
-    rgba(10, 20, 31, 1) 100%
-  );
-  color: white;
+  height: 100vh;
+  color: #FFFFFF;
 }
 div > a {
   color: white;
@@ -624,8 +618,8 @@ nav {
   }
 
   .homePageBody{
-    background-color: rgb(71,101,139) !important;
-    background-color: linear-gradient(124deg, rgba(71,101,139,1) 0%, rgba(36,68,107,1) 27%, rgba(10,20,31,1) 100%) !important;
+    background: rgb(71,101,139) !important;
+    background: linear-gradient(124deg, rgba(71,101,139,1) 0%, rgba(36,68,107,1) 27%, rgba(10,20,31,1) 100%) !important;
   }
 
   .marginTop{
@@ -633,7 +627,7 @@ nav {
   }
 
   .homePageImage{
-    box-shadow: 4px 0px 16px rgb(36, 68, 107);
+    box-shadow: 4px 0px 16px rgba(0,0,1,0.1);
   }
 
   .postionUlArtistPage{
