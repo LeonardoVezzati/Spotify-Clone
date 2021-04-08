@@ -393,10 +393,6 @@
   font-size: 0.6em;
 }
 
-body {
-  height: 100vh;
-  color: #FFFFFF;
-}
 div > a {
   color: white;
   font-size: 1px;
