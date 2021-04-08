@@ -275,6 +275,9 @@
   #img-artist{
     width: 100vw !important;
   }
+  main{
+    width: 100vw;
+  }
 }
 
 .progressSong::before{
