@@ -414,6 +414,7 @@ nav {
   padding: 10px 0px;
 }
 
+
 .signUpWithFacebook i{
   margin-right: 20px;
 }
@@ -461,6 +462,20 @@ nav {
   color: #050505;
   font-weight: 500;
 }
+
+.signUpWithFacebook:hover{
+    background-color:#4568b3;
+  }
+  .signUpWithApple:hover{
+    background-color:rgba(50,50,50);
+  }
+  .spotifyColorButton:hover {
+    color: #fff;
+    background-color: #52d45d;
+  }
+  .spotifySecondaryButton:hover {
+    background-color: rgb(221, 221, 221);
+  }
 
 .disclosureParagraph{
   font-size: 0.6em;
@@ -632,3 +647,283 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  #loginEmail, #loginPassword{
+    border-radius:0px;
+  }
+
+
+/*LOGIN CHECKBOX*/
+.control {
+  font-family: arial;
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 5px;
+  padding-top: 3px;
+  cursor: pointer;
+  font-size: 16px;
+}
+  .control input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+  }
+
+.control_indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #e6e6e6;
+  border: 0px solid #000000;
+  border-radius: 0px;
+}
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+  background: #4ac254;
+}
+
+.control input:checked ~ .control_indicator {
+  background: #45b44e;
+}
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+  background: rgba(0,0,0.);
+}
+.control input:disabled ~ .control_indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control_indicator:after {
+  box-sizing: unset;
+  content: '';
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control_indicator:after {
+  display: inline-block;
+}
+.control-checkbox .control_indicator:after {
+  left: 8px;
+  top: 4px;
+  width: 3px;
+  height: 8px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.control-checkbox input:disabled ~ .control_indicator:after {
+  border-color: #7b7b7b;
+}
+
+/* CSS VOLUME SLIDER */
+      /*WEBKIT = SAFARI*/
+      /*MOZ = FIREFOX*/
+      /*MS = MICROSOFT EDGE*/
+/* <START> */
+
+  input[type=range].styled-slider {
+    height: 2.2em;
+    background-color:transparent;
+    -webkit-appearance: none;
+  }
+  /*progress support*/
+  input[type=range].styled-slider.slider-progress {
+    --range: calc(var(--max) - var(--min));
+    --ratio: calc((var(--value) - var(--min)) / var(--range));
+    --sx: calc(0.5 * 0em + var(--ratio) * (100% - 0em));
+  }
+  
+  input[type=range].styled-slider:focus {
+    outline: none;
+  }
+  
+  /*WEBKIT RUNNABLE TRACK*/
+  
+  input[type=range].styled-slider::-webkit-slider-runnable-track {
+    height: .4em;/*THIS IS THE HEIGHT OF THE VOLUME BAR*/
+    border-radius: 0.5em;
+    background: #efefef;
+    border: 1px solid #b2b2b2;
+    box-shadow: none;
+  }
+  
+  input[type=range].styled-slider:hover::-webkit-slider-runnable-track {
+    background: #e5e5e5;
+    border-color: #9a9a9a;
+  }
+  
+  
+  input[type=range].styled-slider:active::-webkit-slider-runnable-track {
+    background: #f5f5f5;
+    border-color: #c1c1c1;
+  }
+  
+  input[type=range].styled-slider.slider-progress::-webkit-slider-runnable-track {
+    background: linear-gradient(#c4c4c4,#c4c4c4) 0/var(--sx) 100% no-repeat, #525252;
+    /*WHEN THE VOLUME IS SET THE LOWER HALF WILL BE DISPLAYED IN A LIGHT GREY*/
+  }
+  
+  input[type=range].styled-slider.slider-progress:hover::-webkit-slider-runnable-track {
+    background: linear-gradient(#47b850,#47b850) 0/var(--sx) 100% no-repeat, #525252;
+      /*WHEN HOVERING ON THE BAR THE LOWER HALF THAT DISPLAYS THE CURRENT VOLUME WILL BE GREEN*/
+  }
+  
+  input[type=range].styled-slider.slider-progress:active::-webkit-slider-runnable-track {
+    background: linear-gradient(#47b850,#47b850) 0/var(--sx) 100% no-repeat, #525252;
+     /*SAME AS ABOVE WHEN CLICKED*/
+  }
+  
+  
+  /*MOZZILLA RUNNABLE TRACK*/
+  input[type=range].styled-slider::-moz-range-track {
+    height: .2em;
+    border-radius: 0.5em;
+    background: #efefef;
+    border: 1px solid #b2b2b2;
+    box-shadow: none;
+    
+  }
+  
+  input[type=range].styled-slider:hover::-moz-range-track {
+    background: transparent;
+    border-color: #9a9a9a;
+  }
+  
+  input[type=range].styled-slider:active::-moz-range-track {
+    background: transparent;
+    border-color: #c1c1c1;
+  }
+  
+  input[type=range].styled-slider.slider-progress::-moz-range-track {
+    background: linear-gradient(#e5e5e5, #e5e5e5) 0/var(--sx) 100% no-repeat,#525252 ;
+  }
+  
+  input[type=range].styled-slider.slider-progress:hover::-moz-range-track {
+    background: linear-gradient(#47b850,#47b850) 0/var(--sx) 100% no-repeat, #525252;
+  }
+  
+  input[type=range].styled-slider.slider-progress:active::-moz-range-track {
+    background: linear-gradient(#47b850,#47b850) 0/var(--sx) 100% no-repeat, #525252;
+  }
+  
+  /*MS RUNNABLE TRACK*/
+  input[type=range].styled-slider::-ms-track {
+    height: .4em;
+    border-radius: 0.5em;
+    background: #efefef;
+    border: 1px solid #b2b2b2;
+    box-shadow: none;
+    box-sizing: border-box;
+  }
+  
+  
+  input[type=range].styled-slider:hover::-ms-track {
+    background: #efefef;
+    border: 1px solid #b2b2b2;
+    
+  }
+  
+  input[type=range].styled-slider:active::-ms-track {
+    background: transparent;
+    border-color: #c1c1c1;
+  }
+  
+  /*WEBKIT THUMB BUTTON*/
+  
+  input[type=range].styled-slider::-webkit-slider-thumb {
+    width: 1em;/*WIDTH OF VOLUME LOCATOR AKA THUMB BTN*/
+    height: 1em;/*HEIGHT OF VOLUME LOCATOR AKA THUMB BTN*/
+    border-radius: 1em;
+    border: none;
+    margin-top: calc(max((1.5em - 1px - 1px) * 0.5,0px) - 2em * 0.5);/*THIS VERTICALLY ALIGNS THE LOCATOR IN THE MIDDLE OF THE VOLUME BAR*/
+    -webkit-appearance: none;
+  }
+  
+  input[type=range].styled-slider::-webkit-slider-thumb:hover{
+    background: #f0f0f0;
+      box-shadow: 0 0 2px black;
+  }
+  
+  input[type=range].styled-slider::-webkit-slider-thumb:active {
+    background: #f0f0f0;
+  }
+  
+  
+  /*MOZILLA THUMB BTN*/
+  
+  input[type=range].styled-slider::-moz-range-thumb {
+    width: .75em;
+    height: .75em;
+    border-radius: 1em;
+    border: none;
+    margin-top: calc(max((1.5em - 1px - 1px) * 0.5,0px) - 2em * 0.5);
+   
+  }
+  
+  input[type=range].styled-slider::-moz-range-thumb:hover {
+    background: #f0f0f0;
+     box-shadow: 0 0 2px black;
+  }
+  
+  input[type=range].styled-slider::-moz-range-thumb:active {
+    background: #f0f0f0;
+  }
+  
+  
+  /*MS THUMB BTN*/
+  
+  input[type=range].styled-slider::-ms-thumb {
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    background: #f0f0f0;
+    border: none;
+    box-shadow: 0 0 2px black;
+    margin-top: 0;
+    box-sizing: border-box;
+    margin-top: calc(max((1.5em - 1px - 1px) * 0.5,0px) - 2em * 0.5);
+  }
+  input[type=range].styled-slider::-ms-thumb:hover {
+    background: #f0f0f0;
+  }
+  
+  input[type=range].styled-slider::-ms-thumb:active {
+    background: transparent;
+  }
+  
+  /*MS COLOR OF BAR AFTER LOCATOR/THUMB BTN*/
+  
+  input[type=range].styled-slider::-ms-fill-upper {
+    background: transparent;
+    border-color: transparent;
+  }
+  
+  /*MS COLOR OF BAR BEFORE THUMB*/
+  input[type=range].styled-slider::-ms-fill-lower {
+    background: transparent;
+    border-color: transparent;
+  }
+  
+  input[type=range].styled-slider.slider-progress::-ms-fill-lower {
+    height: max(calc(1em - 1px - 1px),0px);
+    border-radius: 0.5em 0 0 0.5em;
+    margin: -1px 0 -1px -1px;
+    background: #47b850;
+    border: 1px solid #b2b2b2;
+    border-right-width: 0;
+  }
+  
+  input[type=range].styled-slider.slider-progress:hover::-ms-fill-lower {
+    background: #47b850;
+    border-color: #9a9a9a;
+  }
+  
+  input[type=range].styled-slider.slider-progress:active::-ms-fill-lower {
+    background: #47b850;
+    border-color: #c1c1c1;
+  }
+  /* <END> */
+  
