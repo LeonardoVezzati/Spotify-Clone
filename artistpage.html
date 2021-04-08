@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Artist Page</title>
+
+    <!--fonts from google-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!--Bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <!--CSS-->
+    <link rel="stylesheet" href="stylesheet.css" />
+
+    <style>
+      @font-face {
+        font-family: lineto-circular-black;
+        src: url(assets/fonts/lineto-circular-black.ttf);
+      }
+      @font-face {
+        font-family: lineto-circular-pro-book;
+        src: url(assets/fonts/lineto-circular-pro-book.ttf);
+      }
+      .album {
+        background-color: #121212 !important;
+      }
+      * {
+        font-family: lineto-circular-pro-book;
+        font-size: 10px;
+      }
+
+      #container-img-artist {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+      }
+      #container-img-artist::after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 50vh;
+        width: 100%;
+        background: linear-gradient(
+          0deg,
+          rgb(18, 18, 18, 1) 20%,
+          rgba(18, 18, 18, 0) 100%
+        );
+        z-index: 2;
+      }
+      #img-artist {
+        position: absolute;
+        width: 100%;
+        height: 50vh;
+        z-index: 2;
+      }
+
+      .text-artist-listener {
+        position: absolute;
+        z-index: 3;
+        left: 50vw;
+        top: 5vh;
+        transform: translateX(-50%) translateY(-50%);
+      }
+      .text-artist-title {
+        background-color: transparent;
+        position: absolute;
+        z-index: 3;
+        left: 50vw;
+        top: 15vh;
+        transform: translateX(-50%) translateY(-50%);
+        font-size: 50px;
+        font-weight: bolder;
+      }
+      .btn-place {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        z-index: 3;
+        left: 50vw;
+        top: 28vh;
+        transform: translateX(-50%) translateY(-50%);
+      }
+      .btn {
+        font-size: 8px;
+        padding: 0% 40%;
+        margin: 5%;
+        color: white;
+        border-radius: 20px;
+        font-weight: normal;
+      }
+      .btn-play {
+        background-color: #1db954;
+      }
+      .btn-follow {
+        border: 1px solid white;
+        background-color: rgb(18, 18, 18, 0.5);
+      }
+      .btn-follow:hover {
+        color:rgb(18, 18, 18, 0.5);
+        background-color: white;
+      }
+      .btn.dots {
+        padding: 0;
+        fill: white;
+        transform: scale(0.55);
+      }
+      .Page-navigation {
+        position: absolute;
+        bottom: 10vh;
+        left: 0;
+        right: 0;
+        z-index: 5;
+      }
+
+      .page-link {
+        border: none;
+        color: white;
+        background-color: transparent;
+        font-size: 8px;
+      }
+      .page-item .page-link {
+        color: gray;
+        background-color: transparent;
+      }
+      .page-item.active .page-link {
+        color: white;
+        background-color: transparent;
+      }
+      .page-item.active .link-borderBottom {
+        border-bottom: 2px solid green;
+        position: absolute;
+        right: 35%;
+        bottom: 0;
+        left: 35%;
+      }
+      .card, .card-body{
+        color: white;
+        border: none;
+        background: transparent;
+        font-weight: bold;
+      }
+      h1{
+        background-color:#121212;
+        margin: 0;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid p-0 m-0" id="container-img-artist">
+      <img
+        id="img-artist"
+        src="assets/queenonline-com-live-1986.jpg"
+        alt="queen"
+      />
+      <p class="text-artist-listener text-muted text-center">
+        33,000,575 MONTHLY LISTENERS
+      </p>
+      <h1 class="text-artist-title text-white">Queen</h1>
+      <!-- PLAY -->
+      <!-- FOLLOW -->
+      <div class="btn-place text-center">
+        <button type="button" class="btn btn-play">PLAY</button>
+        <button type="button" class="btn btn-follow">FOLLOW</button>
+        <button type="button" class="btn dots" title="More">
+          <svg
+            role="img"
+            height="32"
+            width="32"
+            viewBox="0 0 32 32"
+            class="Svg-ulyrgf-0 hJgLcF"
+          >
+            <path
+              d="M5.998 13.999A2 2 0 105.999 18 2 2 0 005.998 14zm10.001 0A2 2 0 1016 18 2 2 0 0016 14zm10.001 0A2 2 0 1026.001 18 2 2 0 0026 14z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <nav class="Page-navigation">
+        <ul class="pagination justify-content-center">
+          <li class="active page-item text-center">
+            <a class="page-link" href="#"
+              >OVERVIEW
+              <div class="link-borderBottom"></div
+            ></a>
+          </li>
+          <li class="page-item text-center">
+            <a class="page-link" href="#"
+              ><div class="link-borderBottom"></div>
+              RELATED ARTISTS</a
+            >
+          </li>
+          <li class="page-item text-center">
+            <a class="page-link" href="#"
+              ><div class="link-borderBottom"></div>
+              ABOUT</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main role="main">
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <h1 class="mb-5">Albums</h1>
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div class="card mb-4">
+                <img
+                  src="https://i.scdn.co/image/ab67616d00001e02e8b066f70c206551210d902b"
+                  alt="Bohemian Rhapsody (The Original Soundtrack)"
+                  srcset="
+                    https://i.scdn.co/image/ab67616d00001e02e8b066f70c206551210d902b 150w,
+                    https://i.scdn.co/image/ab67616d00001e02e8b066f70c206551210d902b 300w,
+                    https://i.scdn.co/image/ab67616d0000b273e8b066f70c206551210d902b 320w,
+                    https://i.scdn.co/image/ab67616d0000b273e8b066f70c206551210d902b 640w
+                  "
+                  sizes="(min-width: 1280px) 232px, 192px"
+                />
+                <div class="card-body">
+                  <p class="card-text text-center">
+                    Bohemian Rhapsody (The Original Soundtrack)
+                  </p>
+                  <p class="card-text text-center">Queen</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div class="card mb-4">
+                <img
+                  src="https://i.scdn.co/image/ab67616d00001e02a97714ae03be2b2ff2aa2dbb"
+                  alt="On Air"
+                  srcset="
+                    https://i.scdn.co/image/ab67616d00001e02a97714ae03be2b2ff2aa2dbb 150w,
+                    https://i.scdn.co/image/ab67616d00001e02a97714ae03be2b2ff2aa2dbb 300w,
+                    https://i.scdn.co/image/ab67616d0000b273a97714ae03be2b2ff2aa2dbb 320w,
+                    https://i.scdn.co/image/ab67616d0000b273a97714ae03be2b2ff2aa2dbb 640w
+                  "
+                  sizes="(min-width: 1280px) 232px, 192px"
+                />
+
+                <div class="card-body">
+                  <p class="card-text text-center">On Air</p>
+                  <p class="card-text text-center">Queen</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div class="card mb-4">
+                <img
+                  src="https://i.scdn.co/image/ab67616d00001e0282ae0f628e5a39196ac9083b"
+                  alt="A Night At The Odeon"
+                  srcset="
+                    https://i.scdn.co/image/ab67616d00001e0282ae0f628e5a39196ac9083b 150w,
+                    https://i.scdn.co/image/ab67616d00001e0282ae0f628e5a39196ac9083b 300w,
+                    https://i.scdn.co/image/ab67616d0000b27382ae0f628e5a39196ac9083b 320w,
+                    https://i.scdn.co/image/ab67616d0000b27382ae0f628e5a39196ac9083b 640w
+                  "
+                  sizes="(min-width: 1280px) 232px, 192px"
+                />
+                <div class="card-body">
+                  <p class="card-text text-center">A Night At The Odeon</p>
+                  <p class="card-text text-center">Queen</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div class="card mb-4">
+                <img
+                  src="https://i.scdn.co/image/ab67616d00001e022f3e43381deaf6505880b1f6"
+                  alt="Live At The Rainbow"
+                  srcset="
+                    https://i.scdn.co/image/ab67616d00001e022f3e43381deaf6505880b1f6 150w,
+                    https://i.scdn.co/image/ab67616d00001e022f3e43381deaf6505880b1f6 300w,
+                    https://i.scdn.co/image/ab67616d0000b2732f3e43381deaf6505880b1f6 320w,
+                    https://i.scdn.co/image/ab67616d0000b2732f3e43381deaf6505880b1f6 640w
+                  "
+                  sizes="(min-width: 1280px) 232px, 192px"
+                />
+                <div class="card-body">
+                  <p class="card-text text-center">Live At The Rainbow</p>
+                  <p class="card-text text-center">Queen</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div class="card mb-4">
+                <img
+                  src="https://i.scdn.co/image/ab67616d00001e0256844a498ad89bd43d4756a7"
+                  alt="Live At The Rainbow (Deluxe)"
+                  srcset="
+                    https://i.scdn.co/image/ab67616d00001e0256844a498ad89bd43d4756a7 150w,
+                    https://i.scdn.co/image/ab67616d00001e0256844a498ad89bd43d4756a7 300w,
+                    https://i.scdn.co/image/ab67616d0000b27356844a498ad89bd43d4756a7 320w,
+                    https://i.scdn.co/image/ab67616d0000b27356844a498ad89bd43d4756a7 640w
+                  "
+                  sizes="(min-width: 1280px) 232px, 192px"
+                />
+                <div class="card-body">
+                  <p class="card-text text-center">Live At The Rainbow (Deluxe)</p>
+                  <p class="card-text text-center">Queen</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div class="card mb-4">
+                <img
+                  src="https://i.scdn.co/image/ab67616d00001e021092d27726b965d04ef427e0"
+                  alt="Hungarian Rhapsody (Live In Budapest / 1986)"
+                  srcset="
+                    https://i.scdn.co/image/ab67616d00001e021092d27726b965d04ef427e0 150w,
+                    https://i.scdn.co/image/ab67616d00001e021092d27726b965d04ef427e0 300w,
+                    https://i.scdn.co/image/ab67616d0000b2731092d27726b965d04ef427e0 320w,
+                    https://i.scdn.co/image/ab67616d0000b2731092d27726b965d04ef427e0 640w
+                  "
+                  sizes="(min-width: 1280px) 232px, 192px"
+                />
+                <div class="card-body">
+                  <p class="card-text text-center">
+                    Hungarian Rhapsody (Live In Budapest / 1986)
+                  </p>
+                  <p class="card-text text-center">Queen</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div class="card mb-4">
+                <img
+                  src="https://i.scdn.co/image/ab67616d00001e02f289327ca505f7acc3a3a72f"
+                  alt="The Cosmos Rocks"
+                  srcset="
+                    https://i.scdn.co/image/ab67616d00001e02f289327ca505f7acc3a3a72f 150w,
+                    https://i.scdn.co/image/ab67616d00001e02f289327ca505f7acc3a3a72f 300w,
+                    https://i.scdn.co/image/ab67616d0000b273f289327ca505f7acc3a3a72f 320w,
+                    https://i.scdn.co/image/ab67616d0000b273f289327ca505f7acc3a3a72f 640w
+                  "
+                  sizes="(min-width: 1280px) 232px, 192px"
+                />
+                <div class="card-body">
+                  <p class="card-text text-center">The Cosmos Rocks</p>
+                  <p class="card-text text-center">Queen</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div class="card mb-4">
+                <img
+                  src="https://i.scdn.co/image/ab67616d00001e02efd5124f95524b047ff71be8"
+                  alt="Queen Rock Montreal"
+                  srcset="
+                    https://i.scdn.co/image/ab67616d00001e02efd5124f95524b047ff71be8 150w,
+                    https://i.scdn.co/image/ab67616d00001e02efd5124f95524b047ff71be8 300w,
+                    https://i.scdn.co/image/ab67616d0000b273efd5124f95524b047ff71be8 320w,
+                    https://i.scdn.co/image/ab67616d0000b273efd5124f95524b047ff71be8 640w
+                  "
+                  sizes="(min-width: 1280px) 232px, 192px"
+                />
+                <div class="card-body">
+                  <p class="card-text text-center">Queen Rock Montreal</p>
+                  <p class="card-text text-center">Queen</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div class="card mb-4">
+                <img
+                  src="https://i.scdn.co/image/ab67616d00001e025cb4de900d6b4d66a778e538"
+                  alt="Return Of The Champions"
+                  srcset="
+                    https://i.scdn.co/image/ab67616d00001e025cb4de900d6b4d66a778e538 150w,
+                    https://i.scdn.co/image/ab67616d00001e025cb4de900d6b4d66a778e538 300w,
+                    https://i.scdn.co/image/ab67616d0000b2735cb4de900d6b4d66a778e538 320w,
+                    https://i.scdn.co/image/ab67616d0000b2735cb4de900d6b4d66a778e538 640w
+                  "
+                  sizes="(min-width: 1280px) 232px, 192px"
+                />
+                <div class="card-body">
+                  <p class="card-text text-center">Return Of The Champions</p>
+                  <p class="card-text text-center">Queen</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div class="card mb-4">
+                <img
+                  src="https://i.scdn.co/image/ab67616d00001e0224c4c0836bde217042af8dbf"
+                  alt="On Fire: Live At The Bowl"
+                  srcset="
+                    https://i.scdn.co/image/ab67616d00001e0224c4c0836bde217042af8dbf 150w,
+                    https://i.scdn.co/image/ab67616d00001e0224c4c0836bde217042af8dbf 300w,
+                    https://i.scdn.co/image/ab67616d0000b27324c4c0836bde217042af8dbf 320w,
+                    https://i.scdn.co/image/ab67616d0000b27324c4c0836bde217042af8dbf 640w
+                  "
+                  sizes="(min-width: 1280px) 232px, 192px"
+                />
+
+                <div class="card-body">
+                  <p class="card-text text-center">On Fire: Live At The Bowl</p>
+                  <p class="card-text text-center">Queen</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div class="card mb-4">
+                <img
+                  src="https://i.scdn.co/image/ab67616d00001e025f8c271d01157fdb59478f14"
+                  alt="Made In Heaven (2011 Remaster)"
+                  srcset="
+                    https://i.scdn.co/image/ab67616d00001e025f8c271d01157fdb59478f14 150w,
+                    https://i.scdn.co/image/ab67616d00001e025f8c271d01157fdb59478f14 300w,
+                    https://i.scdn.co/image/ab67616d0000b2735f8c271d01157fdb59478f14 320w,
+                    https://i.scdn.co/image/ab67616d0000b2735f8c271d01157fdb59478f14 640w
+                  "
+                  sizes="(min-width: 1280px) 232px, 192px"
+                />
+                <div class="card-body">
+                  <p class="card-text text-center">Made In Heaven (2011 Remaster)</p>
+                  <p class="card-text text-center">Queen</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+              <div class="card mb-4">
+                <img
+                  src="https://i.scdn.co/image/ab67616d00001e0295b06b0399c5f32d804dbb89"
+                  alt="Made In Heaven (Deluxe Edition 2011 Remaster)"
+                  srcset="
+                    https://i.scdn.co/image/ab67616d00001e0295b06b0399c5f32d804dbb89 150w,
+                    https://i.scdn.co/image/ab67616d00001e0295b06b0399c5f32d804dbb89 300w,
+                    https://i.scdn.co/image/ab67616d0000b27395b06b0399c5f32d804dbb89 320w,
+                    https://i.scdn.co/image/ab67616d0000b27395b06b0399c5f32d804dbb89 640w
+                  "
+                  sizes="(min-width: 1280px) 232px, 192px"
+                />
+                <div class="card-body">
+                  <p class="card-text text-center">
+                    Made In Heaven (Deluxe Edition 2011 Remaster)
+                  </p>
+                  <p class="card-text text-center">Queen</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>'
+        );
+    </script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Bootstrap-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Fontawesome-->
+    <script
+      src="https://kit.fontawesome.com/cf8ccbb757.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
