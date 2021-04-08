@@ -43,7 +43,7 @@
 }
 
 .bottomMenuWrapper{
-  width: 100%;
+  max-width: 100vh;
   position: absolute;
   bottom: 0px;
   height: 10vh;
@@ -54,6 +54,7 @@
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
+  box-sizing: border-box;
 }
 
 .sidebarBottomInfo{
@@ -261,7 +262,6 @@
   .contentSection{
     left: 0px !important;
     top: 10vh;
-    padding: 40px !important;
   }
 }
 
@@ -304,9 +304,9 @@
 .contentSection{
   position: absolute;
   left: 200px;
-  padding:60px;
   z-index: -1;
-  color: #050505;
+  width: calc(100vw - 200px);
+  box-sizing: border-box;
 }
 
 .sidebarBottomInfoSignUp{
@@ -557,6 +557,7 @@ span {
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
+    box-sizing: border-box;
   }
 
   .mobileBottomMenu i{
@@ -567,4 +568,8 @@ span {
   .mobileBottomMenu p{
     margin-top: 10px;
     margin-bottom: 0px;
+  }
+
+  .maxWidthVW{
+    max-width: 800px;
   }
