@@ -41,74 +41,86 @@
         font-family: lineto-circular-pro-book;
         src: url(assets/fonts/lineto-circular-pro-book.ttf);
       }
-      .album {
+      .album, .contentSection {
         background-color: #121212 !important;
       }
 
-      #container-img-artist {
+      .container-img-artist {
         position: relative;
         width: calc(100vw - 200px) !important;
-        height: 50vh;
+        height: 40vh;
         margin: 0;
         position: relative;
       }
-      #container-img-artist::after {
+      
+      .container-img-artist::after {
         content: "";
         position: absolute;
         top: 0px;
         left: 0px;
-        height: 50vh;
+        height: 40vh;
         width: calc(100vw - 200px) !important;
         background: linear-gradient(
           0deg,
-          rgb(18, 18, 18, 1) 20%,
+          rgb(18, 18, 18, 1) 0%,
+          rgb(18, 18, 18, 0.9) 5%,
+          rgba(18, 18, 18, 0.97) 10%,
           rgba(18, 18, 18, 0) 100%
         );
-        z-index: 2;
+        z-index: 1;
       }
-      #img-artist {
+      .img-artist {
         position: absolute;
         width: calc(100vw - 200px) !important;
-        height: 50vh;
-        z-index: 2;
+        height: 40vh;
+        z-index: 1;
+        /* object-fit: cover; */
+        /* object-fit: none; */
       }
 
       .text-artist-listener {
+        font-size:10px ;
         position: absolute;
-        z-index: 3;
         left: 50%;
-        top: 10%;
+        top: 25%;
         transform: translate(-50%, -50%);
+        font-family: lineto-circular-pro-book;
+        z-index: 2;
       }
       .text-artist-title {
         background-color: transparent;
         position: absolute;
-        z-index: 3;
         left: 50%;
-        top: 25%;
+        top: 40%;
         transform: translate(-50%, -50%);
-        font-size: 50px;
-        font-weight: bolder;
+        font-weight: 900;
+        font-family: lineto-circular-pro-book;
+        z-index: 2;
       }
       .btn-place {
         display: flex;
         justify-content: center;
         position: absolute;
-        z-index: 3;
+        z-index: 2;
         left: 50%;
-        top: 50%;
+        top: 65%;
         transform: translate(-50%, -50%);
       }
       .btnArtistPage {
         font-size: 8px;
         padding: 0% 40%;
-        margin: 5%;
+        margin: 0% 5%;
         color: white;
+        border: 1px solid black;
         border-radius: 20px;
         font-weight: normal;
       }
       .btn-play {
         background-color: #1db954;
+      }
+      .btn-play:hover {
+        color: black;
+        background-color: white;
       }
       .btn-follow {
         border: 1px solid white;
@@ -118,17 +130,26 @@
         color: rgb(18, 18, 18, 0.5);
         background-color: white;
       }
-      .btn.dots {
+      .dots {
+        background-color: transparent;
+        border: 0;
         padding: 0;
         fill: white;
-        transform: scale(0.55);
+        transform: scale(0.65);
+      }
+      .dots:hover {
+        color: black;
+        background-color: white;
       }
       .Page-navigation {
-        position: absolute;
-        bottom: 10vh;
+        position: relative;
+        top: -30px;
+        bottom: 0;
         left: 0;
         right: 0;
-        z-index: 5;
+        z-index: 4;
+        background-color: rgb(18, 18, 18);
+
       }
 
       .page-link {
@@ -149,7 +170,7 @@
         border-bottom: 2px solid green;
         position: absolute;
         right: 35%;
-        bottom: 0;
+        bottom: 3px;
         left: 35%;
       }
       .card,
@@ -694,10 +715,10 @@
 
     <!-- Content Section -->
     <div class="contentSection">
-      <div class="" id="container-img-artist">
+      <div class="container-img-artist">
         <img
-          id="img-artist"
-          src="assets/queenonline-com-live-1986.jpg"
+          class="img-artist"
+          src="assets/queenonline-com-live-1986 - new1.jpg"
           alt="queen"
         />
 
@@ -723,34 +744,33 @@
           </button>
         </div>
 
-        <nav class="Page-navigation">
-          <ul class="pagination justify-content-center postionUlArtistPage">
-            <li class="active page-item text-center">
-              <a class="page-link" href="#"
-                >OVERVIEW
-                <div class="link-borderBottom"></div
-              ></a>
-            </li>
-            <li class="page-item text-center">
-              <a class="page-link" href="#"
-                ><div class="link-borderBottom"></div>
-                RELATED ARTISTS</a
-              >
-            </li>
-            <li class="page-item text-center">
-              <a class="page-link" href="#"
-                ><div class="link-borderBottom"></div>
-                ABOUT</a
-              >
-            </li>
-          </ul>
-        </nav>
       </div>
+      <nav class="Page-navigation">
+        <ul class="pagination justify-content-center postionUlArtistPage">
+          <li class="active page-item text-center">
+            <a class="page-link" href="#"
+              >OVERVIEW
+              <div class="link-borderBottom"></div
+            ></a>
+          </li>
+          <li class="page-item text-center">
+            <a class="page-link" href="#"
+              ><div class="link-borderBottom"></div>
+              RELATED ARTISTS</a
+            >
+          </li>
+          <li class="page-item text-center">
+            <a class="page-link" href="#"
+              ><div class="link-borderBottom"></div>
+              ABOUT</a
+            >
+          </li>
+        </ul>
+      </nav>
 
-      <main role="main">
-        <div class="album py-5">
+        <div class="album pl-4">
           <div class="container">
-            <h1 class="mb-5">Albums</h1>
+            <h1 class="mb-3">Albums</h1>
             <div class="row">
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card mb-4">
@@ -913,7 +933,6 @@
             </div>
           </div>
         </div>
-      </main>
     </div>
     <!-- End Content Section -->
 
