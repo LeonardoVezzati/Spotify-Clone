@@ -1,4 +1,3 @@
-
 .wrapperSideBar{
   background-color: #050505;
   width: 200px;
@@ -44,7 +43,7 @@
 }
 
 .bottomMenuWrapper{
-  width: 100%;
+  max-width: 100vh;
   position: absolute;
   bottom: 0px;
   height: 10vh;
@@ -55,6 +54,7 @@
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
+  box-sizing: border-box;
 }
 
 .sidebarBottomInfo{
@@ -67,7 +67,6 @@
 }
 
 .sidebarBottomInfoInstalltheApp{
-  margin-left: 20px;
   color: rgb(200, 200, 200);
   padding-bottom: 10px;
   border-bottom: 1px solid rgb(200, 200, 200);
@@ -77,7 +76,6 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  margin-left: 20px;
   margin-right: 10px;
 }
 
@@ -160,10 +158,111 @@
 }
 
 .progressSong{
-  width: 600px;
+  width: 550px;
   height: 5px;
   text-align: center;
   margin-top: 10px;
+}
+
+@media (min-width: 1041px) {
+  .progressSong{
+    width: 500px;
+  }
+  .bottomMenuWrapperRightBars {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1041px) {
+  .progressSong{
+    width: 400px;
+  }
+  .bottomMenuWrapperCenter li{
+    margin-right: 30px;
+  }
+  .bottomMenuWrapperCenter ul>li{
+    margin-left: 30px;
+  }
+  .bottomMenuWrapperRightBars {
+    display: none !important;
+  }
+}
+
+@media (max-width: 947px) {
+  .progressSong{
+    width: 300px;
+  }
+  .bottomMenuWrapperCenter li{
+    margin-right: 20px;
+  }
+  .bottomMenuWrapperCenter ul>li{
+    margin-left: 20px;
+  }
+  .bottomMenuWrapperRightBars {
+    display: none !important;
+  }
+}
+
+@media (max-width: 847px) {
+  .progressSong{
+    width: 300px;
+  }
+  .bottomMenuWrapperCenter li{
+    margin-right: 10px;
+  }
+  .bottomMenuWrapperCenter ul>li{
+    margin-left: 10px;
+  }
+  .bottomMenuWrapperRight ul{
+    display: none;
+  }
+  .bottomMenuWrapperRightBars {
+    display: block !important;
+  }
+}
+
+@media (max-width: 794px) {
+  .progressSong{
+    width: 300px;
+  }
+  .bottomMenuWrapperCenter li{
+    margin-right: 10px;
+  }
+  .bottomMenuWrapperCenter ul>li{
+    margin-left: 10px;
+  }
+  .bottomMenuWrapperLeftAlbumText h3{
+    font-size: 10px;
+  }
+  .bottomMenuWrapperLeftAlbumText p{
+    font-size: 8px;
+  }
+  .bottomMenuWrapperLeftAlbumText i{
+    font-size: 0.8em;
+  }
+  .bottomMenuWrapperLeftAlbumImage{
+    width: 50px;
+    height: 50px;
+  }
+  .bottomMenuWrapperRight ul{
+    display: none;
+  }
+  .bottomMenuWrapperRightBars {
+    display: block !important;
+  }
+}
+
+@media (max-width: 694px) {
+  .progressSong{
+    width: 200px;
+  }
+}
+
+@media (max-width: 575px) {
+  .contentSection{
+    left: 0px !important;
+    top: 10vh;
+  }
 }
 
 .progressSong::before{
@@ -202,11 +301,12 @@
   display: inline;
 }
 
-.textTest{
+.contentSection{
   position: absolute;
   left: 200px;
-  padding:60px;
   z-index: -1;
+  width: calc(100vw - 200px);
+  box-sizing: border-box;
 }
 
 .sidebarBottomInfoSignUp{
@@ -300,8 +400,9 @@ nav {
   justify-content: center;
   text-align: center;
 }
-div .col {
-  text-align: center;
+span {
+  font-size: 13px;
+  display: flex;
 }
 
 .signUpWithFacebook{
@@ -401,4 +502,74 @@ div .col {
     color: #050505;
     background-color: #FFFFFF;
   
+  }
+
+  .dropdownSettings{
+    z-index: 300000000000;
+  }
+
+  .textDropUp{
+    color: black;
+    font-size: 12px;
+  }
+
+  .mobileTopMenu{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    height: 10vh;
+    background-color: transparent;
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+  }
+
+  .mobileTopMenuRight ul{
+    list-style: none;
+    padding:0;
+    text-align: right;
+  }
+
+  .mobileTopMenuRight li{
+    display: inline-block;
+    margin-left: 25px;
+  }
+
+  
+  .mobileTopMenu i{
+    color: #FFFFFF;
+    font-size: 1.6em;
+  }
+
+  body{
+    background-color: teal;
+  }
+
+  .mobileBottomMenu{
+    position: absolute;
+    position: fixed;
+    bottom: 0px;
+    z-index: 1000000;
+    background-color: #282828;
+    width: 100vw;
+    height: 12vh;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .mobileBottomMenu i{
+    color: #FFFFFF;
+    font-size: 1.6em;
+  }
+
+  .mobileBottomMenu p{
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+
+  .maxWidthVW{
+    max-width: 800px;
   }
