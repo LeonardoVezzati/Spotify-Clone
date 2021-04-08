@@ -1,4 +1,3 @@
-
 .wrapperSideBar{
   background-color: #050505;
   width: 200px;
@@ -401,8 +400,9 @@ nav {
   justify-content: center;
   text-align: center;
 }
-div .col {
-  text-align: center;
+span {
+  font-size: 13px;
+  display: flex;
 }
 
 .signUpWithFacebook{
