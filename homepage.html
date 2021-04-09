@@ -15,7 +15,7 @@
     />
     <style>
       body {
-        height: 150vh;
+        height: 110vh;
         color: #FFFFFF !important;
       }
 
@@ -63,6 +63,8 @@
           padding-top: 50px;
         }
       } 
+
+
 
     </style>
 
@@ -285,12 +287,14 @@
                 </div>
                 <div class="row row-submit mt-3">
                   <div class="col-12 col-sm-6 d-flex flex-column justify-content-center">
-                  <div>
-                    <label class="checkbox mb-3 mb-md-0"><span>Remember me</span>
-                      <input type="checkbox" id="login-remember" checked="checked">
-                      <span class="checkmark"></span>
-                    </label>
-                    </div>
+
+                    <div class="control-group mb-3 mb-md-0">
+                      <label class="control control-checkbox" style="color:#b6b4b4;">
+                         Remember me
+                          <input type="checkbox" checked="checked" />
+                          <div class="control_indicator"></div>
+                      </label>
+                      </div>
                   </div>
                   <div class="col-12 col-sm-6">
                     <button class="btn btn-block spotifyColorButton" id="loginButton" data-dismiss="modal">LOG IN</button>
@@ -369,9 +373,14 @@
           <li>
             <div class="d-flex align-items-center">
               <i class="fas fa-volume-up"></i>
-              <div class="progress progressVolume mb-0 ml-2">
+              <!--THIS INPUT THE CONTAINS VOLUME SLIDER-->
+              <input type="range" class="d-lg-block styled-slider slider-progress p-3"/>
+    </div>
+  </div>
+</div>
+              <!-- <div class="progress progressVolume mb-0 ml-2">
                 <div class="progress-bar mb-0" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+              </div> -->
             </div>
           </li>
         </ul>
@@ -593,6 +602,19 @@
       signUpButton.onclick = logInUser
       logOutButton.onclick = logOutUser
 
+
+    
+    //GETS THE VALUE OF VOLUME SLIDER, THE VALUE REPRESENTS HOW HIGH OR LOW THE VOLUME IS
+    //DEPENDING ON WHERE THE THUMB BTN HAS BEEN PLACED 
+    //FAR LEFT = 0 , NO SOUND
+    //FAR RIGHT = 100, MAX VOLUME
+    for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
+          e.style.setProperty('--value', e.value);
+          e.style.setProperty('--min', e.min == '' ? '0' : e.min);
+          e.style.setProperty('--max', e.max == '' ? '100' : e.max);
+          e.addEventListener('input', () => e.style.setProperty('--value', e.value));
+          console.log( e.addEventListener('input', () => e.style.setProperty('--value', e.value)))
+      }
     </script>
     <!--End Local Storage-->
 
