@@ -75,8 +75,6 @@
         width: calc(100vw - 200px);
         height: 40vh;
         z-index: 1;
-        /* object-fit: cover; */
-        /* object-fit: none; */
       }
 
       .text-artist-listener {
@@ -180,10 +178,12 @@
         background: transparent !important;
         font-weight: bold;
       }
-      h1 {
+      .albums-heading {
         background-color: #121212;
         margin: 0;
         color: white;
+        font-weight: bold;
+
       }
       .card-text{
         font-family: lineto-circular-pro-book;
@@ -787,7 +787,7 @@
 
       <div class="album pl-4">
         <div class="container">
-          <h1 class="mb-3">Albums</h1>
+          <h2 class="albums-heading mb-3">Albums</h2>
           <div class="row">
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
               <div class="card mb-4">
