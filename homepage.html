@@ -15,9 +15,55 @@
     />
     <style>
       body {
-        height: 100vh;
-        color: #FFFFFF;
+        height: 150vh;
+        color: #FFFFFF !important;
       }
+
+      @media (max-width:768px){
+        body{
+          height: 340vh !important;
+        }
+        .Page-navigation ul li a{
+          font-size: 10px;
+        }
+      } 
+      @media (max-width:576px){
+        body{
+          width: 100vw !important;
+          height: 650vh;
+        }
+        .Page-navigation{
+          padding-top: 50px;
+        }
+        .titleMobileHomepage{
+          font-size: 1.2em;
+          padding-top: 50px;
+        }
+
+      }
+      @media (width:575px){
+        body{
+          width: 100vw !important;
+          height: 650vh;
+        }
+        .Page-navigation{
+          padding-top: 50px;
+        }
+        .titleMobileHomepage{
+          font-size: 1.2em;
+          padding-top: 50px;
+        }
+      }
+      @media (max-width:399px){
+        .Page-navigation ul li a{
+          font-size: 8px;
+        }
+        .titleMobileHomepage{
+          font-size: 0.9em;
+          padding-top: 50px;
+        }
+      } 
+
     </style>
 
     <!--Favicon-->
@@ -411,9 +457,9 @@
     </div>
 
     <div class="container mb-5">
-      <h3 class="marginTop">#THROWBACKTHURSDAY</h3>
+      <h3 class="marginTop titleMobileHomepage">#THROWBACKTHURSDAY</h3>
       <div class="row mb-3 text-center">
-        <div class="col col-12 col-md-6 col-lg-2 p-2">
+        <div class="col col-12 col-sm-6 col-md-4 col-lg-2 p-2">
           <img
             src="Img/VIRAL_GLOBAL_DEFAULT.jpg"
             class="img-fluid mb-1 homePageImage"
@@ -421,7 +467,7 @@
           />
           <p class="mt-2 font-weight-bold">Karaoke</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 p-2">
+        <div class="col col-12 col-sm-6 col-md-4 col-lg-2 p-2">
           <img
             src="Img/REGIONAL_GLOBAL_DEFAULT.jpg"
             class="img-fluid mb-1 homePageImage"
@@ -429,7 +475,7 @@
           />
           <p class="mt-2 font-weight-bold">Lyricist</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 p-2">
+        <div class="col col-12 col-sm-6 col-md-4 col-lg-2 p-2">
           <img
             src="Img/REGIONAL_CA_DEFAULT.jpg"
             class="img-fluid mb-1 homePageImage"
@@ -437,7 +483,7 @@
           />
           <p class="mt-2 font-weight-bold">Frequent Rotation</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 p-2">
+        <div class="col col-12 col-sm-6 col-md-4 col-lg-2 p-2">
           <img
             src="Img/region_au_default.jpg"
             class="img-fluid mb-1 homePageImage"
@@ -445,7 +491,7 @@
           />
           <p class="mt-2 font-weight-bold">00s Italy</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 p-2">
+        <div class="col col-12 col-sm-6 col-md-4 col-lg-2 p-2">
           <img
             src="Img/region_be_default.jpg"
             class="img-fluid mb-1 homePageImage"
@@ -453,7 +499,7 @@
           />
           <p class="mt-2 font-weight-bold">Cocktail Hour</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 p-2">
+        <div class="col col-12 col-sm-6 col-md-4 col-lg-2 p-2">
           <img
             src="Img/region_no_default.jpg"
             class="img-fluid mb-1 homePageImage"
@@ -467,7 +513,7 @@
       <!-- <div class="container ml-5"> -->
       <h3>Rankings</h3>
       <div class="row p-0 text-center">
-        <div class="col col-12 col-md-6 col-lg-2 p-2">
+        <div class="col col-12 col-sm-6 col-md-4 col-lg-2 p-2">
           <img
             src="Img/region_be_default.jpg"
             class="img-fluid mb-1 homePageImage"
@@ -475,7 +521,7 @@
           />
           <p class="mt-2 font-weight-bold">Top 50 - Italy</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 p-2">
+        <div class="col col-12 col-sm-6 col-md-4 col-lg-2 p-2">
           <img
             src="Img/region_no_default.jpg"
             class="img-fluid mb-1 homePageImage"
@@ -483,7 +529,7 @@
           />
           <p class="mt-2 font-weight-bold">Top 50 - Global</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 p-2">
+        <div class="col col-12 col-sm-6 col-md-4 col-lg-2 p-2">
           <img
             src="Img/VIRAL_GLOBAL_DEFAULT.jpg"
             class="img-fluid mb-1 homePageImage"
@@ -491,7 +537,7 @@
           />
           <p class="mt-2 font-weight-bold">Viral 50 - Global</p>
         </div>
-        <div class="col col-12 col-md-6 col-lg-2 p-2">
+        <div class="col col-12 col-sm-6 col-md-4 col-lg-2 p-2">
           <img
             src="Img/REGIONAL_GLOBAL_DEFAULT.jpg"
             class="img-fluid mb-1 homePageImage"

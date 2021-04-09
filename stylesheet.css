@@ -263,8 +263,9 @@
 @media (max-width: 575px) {
   .contentSection{
     left: 0px !important;
-    right: 0px;
+    right: 0px !important;
     width: 100vw !important;
+    margin: auto;
   }
   #container-img-artist{
     width: 100vw !important;
@@ -546,7 +547,7 @@ nav {
   .mobileBottomMenu{
     position: absolute;
     position: fixed;
-    bottom: 0px;
+    bottom: 0px !important;
     z-index: 1000000;
     background-color: #282828;
     width: 100vw;
