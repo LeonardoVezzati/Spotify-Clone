@@ -48,7 +48,7 @@
 
       .container-img-artist {
         position: relative;
-        width: calc(100vw - 200px) !important;
+        width: calc(100vw - 200px);
         height: 40vh;
         margin: 0;
         position: relative;
@@ -60,7 +60,7 @@
         top: 0px;
         left: 0px;
         height: 40vh;
-        width: calc(100vw - 200px) !important;
+        width: calc(100vw - 200px);
         background: linear-gradient(
           0deg,
           rgb(18, 18, 18, 1) 0%,
@@ -72,7 +72,7 @@
       }
       .img-artist {
         position: absolute;
-        width: calc(100vw - 200px) !important;
+        width: calc(100vw - 200px);
         height: 40vh;
         z-index: 1;
         /* object-fit: cover; */
@@ -223,10 +223,18 @@
               <a href="#"><i class="fas fa-search"></i>Search</a>
             </li>
             <li>
-              <a href="#pageSubmenu" class=""
-                ><i class="fas fa-bars"></i>Pages</a
-              >
+              <a class="" data-toggle="collapse" href="#collapsePages" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fas fa-bars"></i>Pages
+              </a>
             </li>
+            <div class="collapse" id="collapsePages">
+              <li>
+                <a href="artistpage.html"><i class="fas fa-music"></i>Artist Page</a>
+              </li>
+              <li>
+                <a href="albumpage.html"><i class="fas fa-compact-disc"></i>Albums Page</a>
+              </li>
+            </div>
           </ul>
         </div>
 
@@ -603,11 +611,9 @@
     <div class="bottomMenuWrapper d-none d-sm-flex d-md-flex d-lg-flex">
       <div class="bottomMenuWrapperLeft">
         <div class="d-flex">
-          <img
-            src="Img/Highway 61.PNG"
-            class="bottomMenuWrapperLeftAlbumImage"
-            alt=""
-          />
+          <div class="position-relative imageDimensionContainer">
+            <img src="Img/Highway 61.PNG" class="bottomMenuWrapperLeftAlbumImage" alt="">
+          </div>
           <div class="bottomMenuWrapperLeftAlbumText">
             <h3>Song For My Father</h3>
             <p>Horace Silver</p>
@@ -655,7 +661,7 @@
           <ul>
             <li><i class="fas fa-bars"></i></li>
             <li><i class="fas fa-laptop-code"></i></li>
-            <li>
+            <li class="finalListLi">
               <div class="d-flex align-items-center">
                 <i class="fas fa-volume-up"></i>
                   <!-- THIS INPUT THE CONTAINS VOLUME SLIDER-->

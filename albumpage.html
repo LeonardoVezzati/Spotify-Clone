@@ -85,8 +85,18 @@
             <a href="#"><i class="fas fa-search"></i>Search</a>
           </li>
           <li>
-            <a href="#pageSubmenu" class=""><i class="fas fa-bars"></i>Pages</a>
+            <a class="" data-toggle="collapse" href="#collapsePages" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <i class="fas fa-bars"></i>Pages
+            </a>
           </li>
+          <div class="collapse" id="collapsePages">
+            <li>
+              <a href="artistpage.html"><i class="fas fa-music"></i>Artist Page</a>
+            </li>
+            <li>
+              <a href="albumpage.html"><i class="fas fa-compact-disc"></i>Albums Page</a>
+            </li>
+          </div>
         </ul>
       </div> 
 
@@ -323,7 +333,9 @@
   <div class="bottomMenuWrapper d-none d-sm-flex d-md-flex d-lg-flex">
     <div class="bottomMenuWrapperLeft">
       <div class="d-flex">
-        <img src="Img/Highway 61.PNG" class="bottomMenuWrapperLeftAlbumImage" alt="">
+        <div class="position-relative imageDimensionContainer">
+          <img src="Img/Highway 61.PNG" class="bottomMenuWrapperLeftAlbumImage" alt="">
+        </div>
         <div class="bottomMenuWrapperLeftAlbumText">
           <h3>Song For My Father</h3>
           <p>Horace Silver</p>
@@ -355,7 +367,7 @@
         <ul>
           <li><i class="fas fa-bars"></i></li>
           <li><i class="fas fa-laptop-code"></i></li>
-          <li>
+          <li class="finalListLi">
             <div class="d-flex align-items-center">
               <i class="fas fa-volume-up"></i>
               <!--THIS INPUT THE CONTAINS VOLUME SLIDER-->
@@ -388,20 +400,20 @@
   <!-- Mobile Bottom Menu -->
   <div class="d-flex justify-content-between mobileBottomMenu d-block d-sm-none d-md-none d-lg-none d-xl-none">
     <div class="BottomMenuSection1 text-center d-flex flex-column align-items-center">
-      <i class="fas fa-home"></i>
-      <p>Home</p>
+        <i class="fas fa-home"></i>
+        <p>Home</p>
     </div>
     <div class="BottomMenuSection2 text-center d-flex flex-column align-items-center">
-      <i class="fas fa-search"></i>
-      <p>Search</p>
+        <i class="fas fa-search"></i>
+        <p>Search</p>
     </div>
     <div class="BottomMenuSection3 text-center d-flex flex-column align-items-center">
-      <i class="fas fa-bars"></i>
-      <p>Your Library</p>
+        <i class="fas fa-bars"></i>
+        <p>Your Library</p>
     </div>
     <div class="BottomMenuSection4 text-center d-flex flex-column align-items-center">
-      <i class="fab fa-spotify"></i>
-      <p>Premium</p>
+        <i class="fab fa-spotify"></i>
+        <p>Premium</p>
     </div>
   </div>
   <!-- End Mobile Bottom Menu -->
@@ -410,8 +422,8 @@
   <div class="contentSection">
     <div class="container-fluid" id="Album-Page">
       <div class="row">
-        <div class="col-sm-6 Album text-center">
-          <div class="Album-Image">
+        <div class="col-sm-12 col-md-6 Album text-center">
+          <div class="Album-Image mt-5 mt-sm-4 mt-md-0">
             <img
               class="img-fluid"
               src="https://i.scdn.co/image/ab67616d00001e02d92f69c3b3adb389afdde64f"
@@ -425,12 +437,12 @@
           <div class="play-btn-place text-center">
             <button type="button" class="btn btn-play">PLAY</button>
           </div>
-          <div class="Album-Year-Num-Songs">
+          <div class="Album-Year-Num-Songs mt-3">
             <span class="Album-Year">1974</span>
             <span class="dot">•</span>
             <span class="Album-Num-Songs">16 SONGS</span>
           </div>
-          <div class="Icons text-white">
+          <div class="Icons text-white mb-4">
             <span class="Save-to-Your-Library-Icon text-white text-center">
               <button
                 type="button"
@@ -476,7 +488,7 @@
             </span>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-12 col-md-6">
           <div class="song col-12 text-white">
             <div class="row">
               <div class="song-icon col-1">

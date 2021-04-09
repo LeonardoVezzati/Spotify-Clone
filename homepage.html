@@ -99,8 +99,18 @@
             <a href="#"><i class="fas fa-search"></i>Search</a>
           </li>
           <li>
-            <a href="#pageSubmenu" class=""><i class="fas fa-bars"></i>Pages</a>
+            <a class="" data-toggle="collapse" href="#collapsePages" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <i class="fas fa-bars"></i>Pages
+            </a>
           </li>
+          <div class="collapse" id="collapsePages">
+            <li>
+              <a href="artistpage.html"><i class="fas fa-music"></i>Artist Page</a>
+            </li>
+            <li>
+              <a href="albumpage.html"><i class="fas fa-compact-disc"></i>Albums Page</a>
+            </li>
+          </div>
         </ul>
       </div> 
 
@@ -338,7 +348,9 @@
   <div class="bottomMenuWrapper d-none d-sm-flex d-md-flex d-lg-flex">
     <div class="bottomMenuWrapperLeft">
       <div class="d-flex">
-        <img src="Img/Highway 61.PNG" class="bottomMenuWrapperLeftAlbumImage" alt="">
+        <div class="position-relative imageDimensionContainer">
+          <img src="Img/Highway 61.PNG" class="bottomMenuWrapperLeftAlbumImage" alt="">
+        </div>
         <div class="bottomMenuWrapperLeftAlbumText">
           <h3>Song For My Father</h3>
           <p>Horace Silver</p>
@@ -370,17 +382,11 @@
         <ul>
           <li><i class="fas fa-bars"></i></li>
           <li><i class="fas fa-laptop-code"></i></li>
-          <li>
-            <div class="d-flex align-items-center">
+          <li class="finalListLi">
+            <div class="d-flex align-items-center progressVolume">
               <i class="fas fa-volume-up"></i>
               <!--THIS INPUT THE CONTAINS VOLUME SLIDER-->
               <input type="range" class="d-lg-block styled-slider slider-progress p-3"/>
-    </div>
-  </div>
-</div>
-              <!-- <div class="progress progressVolume mb-0 ml-2">
-                <div class="progress-bar mb-0" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div> -->
             </div>
           </li>
         </ul>
